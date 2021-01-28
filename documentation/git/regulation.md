@@ -38,7 +38,7 @@ All Commit Message should be in the following format: <br>
 ```git commit -m "[branch name]:[member name] [work details]"``` <br>
 ***NOTE:*** Member name should be the prefix before ```@wit.edu```. <br>
 For Example: <br>
-```git coomit -m "updateHomePage: changz Add home page button animation"```
+```git commit -m "updateHomePage: changz Add home page button animation"```
 
 ### Commit to Master
 All the changes commiting to master from task branch should create a pull request in the following format: <br>
