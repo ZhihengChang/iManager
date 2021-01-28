@@ -27,11 +27,12 @@ When making changes to the project, a new branch with the task/story name should
 Then switch to the new branch using:    <br>
 ```git checkout [branch name]```        <br>
 Make sure to commit changes before switching branches. <br>
+Make sure to commit often. <br>
 ***NOTE:*** <br>
 To delete a branch locally: 
 ```git branch -d [local Branch Name]``` <br>
 To delete branch remotely:
-```git push origin --delete remoteBranchName```
+```git push origin --delete [remote Branch Name]```
 
 ### Commit Message Format
 All Commit Message should be in the following format: <br>
