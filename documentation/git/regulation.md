@@ -45,3 +45,4 @@ For Example: <br>
 All the changes commiting to master from task branch should create a pull request in the following format: <br>
 ```[branch name] -> master [changes]``` <br>
 Copy the pull request URL and post it to discord ```#pull request``` channel. <br>
+How to request for pull request review: [Request PR Review](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/requesting-a-pull-request-review)<br>
