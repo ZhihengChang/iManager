@@ -22,7 +22,8 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mocha": "^8.2.1",
-    "mongoose": "^5.11.15"
+    "mongoose": "^5.11.15",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "husky": "^4.3.8"
