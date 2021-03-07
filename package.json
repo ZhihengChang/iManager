@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ZhihengChang/iManager#readme",
   "dependencies": {
     "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "mocha": "^8.2.1"
   },
   "devDependencies": {
