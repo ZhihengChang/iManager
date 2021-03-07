@@ -1,11 +1,8 @@
 /**
  * Logger Class
  * 
- * author: Zhiheng Chang
- * contributor:
  * used by: * file
  * descriptions: custom log
- * date added: 03/03/2021
  */
 const color_reset = "\x1b[0m";
 const color_map = {
