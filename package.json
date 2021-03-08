@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server/server.js",
+    "start:prod": "NODE_ENV=production node src/server/server.js",
+    "data:import": "node test/data/dev_data_seeding.js --import",
+    "data:delete": "node test/data/dev_data_seeding.js --delete",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

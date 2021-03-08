@@ -1,0 +1,37 @@
+[
+    {
+        "userid": 1000,
+        "username": "changz",
+        "password": "1234"
+    },
+    {
+        "userid": 1001,
+        "username": "millsh",
+        "password": "4567"
+    },
+    {
+        "userid": 1002,
+        "username": "toms",
+        "password": ""
+    },
+    {
+        "userid": 1003,
+        "username": "bella",
+        "password": ""
+    },
+    {
+        "userid": 1004,
+        "username": "yushuf",
+        "password": ""
+    },
+    {
+        "userid": 1005,
+        "username": "johns",
+        "password": ""
+    },
+    {
+        "userid": 1006,
+        "username": "maxm",
+        "password": ""
+    }
+]
