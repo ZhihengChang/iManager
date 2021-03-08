@@ -43,7 +43,7 @@ class DBAPI {
 
     /**
      * process sorting in url query
-     * by default all documents are sorted by [edit field name here]
+     * by default all documents are sorted by userid
      * NOTE: adding '-' sign in front of a field is sorting in des order
      * @returns DBAPI
      */
@@ -53,7 +53,7 @@ class DBAPI {
             this.query = this.query.sort(sortBy)
         }else{
             // edit here for default sortby
-            // this.query = this.query.sort(field name);
+            this.query = this.query.sort('-userid');
         }
         return this;
     }
