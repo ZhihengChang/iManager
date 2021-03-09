@@ -1,11 +1,35 @@
-const http = require('http');
-const config = require('../config/config.json');
+//Setup Enviorment
+const dotenv = require('dotenv');
+dotenv.config({ path:  __dirname + '/../config/config.env'});
 
-let server = http.createServer((request, response) => {
-    //code handle request
+//Setup logger
+const path = require('path');
+const Logger = require('../util/logger');
+const logger = new Logger(path.basename(__filename));
+// logger.details(true); //log details
+
+//DB Connection
+const mongoose = require('mongoose');
+const DB = process.env.DATABASE.replace(
+    '<PASSWORD>', 
+    process.env.DB_PASSWORD
+);
+mongoose.connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
 })
-server.listen(config.service.port);
-console.log("Server Started");
+.then(logger.log("Database connected!").info());
+
+const app = require("./app")
+
+const port = process.env.PORT || 3000;
+//Start Server
+app.listen(port, ()=>{
+    logger.log(`Server is now running on port ${port}`).info();
+});
+
 
 
 

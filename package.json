@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node src/server/server.js",
+    "start": "node src/server/server.js",
+    "start:prod": "NODE_ENV=production node src/server/server.js",
+    "data:import": "node test/data/dev_data_seeding.js --import",
+    "data:delete": "node test/data/dev_data_seeding.js --delete",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +21,12 @@
   },
   "homepage": "https://github.com/ZhihengChang/iManager#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
-    "mocha": "^8.2.1"
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "mongoose": "^5.11.15",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "husky": "^4.3.8"
