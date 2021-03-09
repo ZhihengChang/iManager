@@ -1,0 +1,73 @@
+*{
+    font-family: "Lato", sans-serif;
+}
+
+body{
+    background-color: pink;
+}
+
+.login{
+    margin: 100px auto;
+    width: 350px;
+    background-color: white;
+    padding: 60px;
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+    margin: center;
+    border-radius: 50%;
+    margin: center;
+    margin-bottom: 10px;
+}
+
+.logo img{
+    width: auto;
+}
+
+.form{
+    width: 100%;
+    margin-top: 30px;
+}
+.form input{
+    font-size: 18px;
+    padding: 10px 20px 10px 5px;
+    border: none;
+    outline: none;
+    background: none;
+}
+.username, .password{
+    display: block;
+    border-radius: 30px;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.form svg{
+    height: 25px;
+    margin-bottom: -5px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 0px;
+    margin-bottom: 30px;
+}
+
+.form button{
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 5px;
+    border-radius: 30px;
+    background-color: pink;
+    color: #fff;
+    transition: .5s;
+
+}
