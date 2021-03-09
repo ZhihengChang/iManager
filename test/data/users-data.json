@@ -2,7 +2,7 @@
     {
         "userid": 1000,
         "username": "changz",
-        "password": "1234"
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
     },
     {
         "userid": 1001,
@@ -33,5 +33,10 @@
         "userid": 1006,
         "username": "maxm",
         "password": ""
+    }
+    {
+        "userid": 1007,
+        "username": "test",
+        "password": "$2a$09$6UKhNVTzptF.Fyl.WTw2q.6420GMIC9Iczu/9Ex5vX2Z9WXei9o9m"
     }
 ]

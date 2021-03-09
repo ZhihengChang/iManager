@@ -15,6 +15,7 @@ logger.details(true);
 const DBAPI = require('../../util/DBAPI');
 //Models
 const User = require('../models/userModel');
+const passport = require('passport');
 
 //Middlewares
 
@@ -141,27 +142,29 @@ exports.updateUser = async function(req, res){
  * @param {Request} req 
  * @param {Response} res 
  */
-exports.validateUser = async function(req, res){
+exports.validateUser = function(req, res){
     logger.log("validate user " + req.body.username).msg();
-    try {
-        let username = req.body.username;
-        let password = req.body.password;
+    passport.authenticate('local', {
+        successRedirect: `/dashboard/${req.body.username}`,
+        failureRedirect: "/",
+        failureFlash: true
+    })(req, res);
+}
 
-        const user = await User.findOne({ username });
-
-        if(password === user.password){
-            util.sendResponse(res, 200, {
-                status: 'success',
-                message: 'login success',
-            });
-        }else{
-            throw new Error('username or password is incorrect');
-        }
-        
-    } catch (err) {
-        util.sendResponse(res, 400, {
-            status: 'fail',
-            message: err
+/**
+ * Render user dashboard after successful login
+ * @param {Request} req 
+ * @param {Response} res 
+ */
+ exports.renderUserDashboard = async function(req, res){
+    try{
+        const user = await User.findOne({username: req.params.username}).lean();
+        res.render("dashboard", {
+            userInfo: user
         });
+    }
+    catch(err){
+        console.log(err);
+        res.send(err);
     }
 }
