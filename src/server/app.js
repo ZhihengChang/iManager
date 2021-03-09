@@ -25,6 +25,10 @@ require('../config/passport')(passport);
 app.use(expressLayouts);
 app.set('view engine', 'ejs'); 
 
+//Serve static files
+const clientDir = path.join(parentDir, 'client');
+app.use(express.static(clientDir))
+
 // Express session
 app.use(session({
     secret: 'secret',
