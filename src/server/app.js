@@ -1,3 +1,10 @@
+//utils
+const util = require('../util/server_utilities');
+const AppError = require('../util/error/appError');
+const Logger = require('../util/logger');
+const globalErrorHandler = require('./controllers/errorController');
+
+//app
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const morgan = require("morgan"); //a logger module
@@ -5,6 +12,8 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const session = require("express-session");
 const path = require("path");
+
+const logger = new Logger();
 
 //Routes
 const userRoutes = require("./routes/userRoutes");
@@ -64,5 +73,12 @@ app.use("/users", userRoutes);
 app.get("/", function (req, res){
     res.render("login");
 });
+
+//Error handling
+app.all('*', (req, res, next) => {
+    next(new AppError(`Can't find ${req.originalUrl} on the server`, 404));
+});
+
+app.use(globalErrorHandler);
 
 module.exports = app;
