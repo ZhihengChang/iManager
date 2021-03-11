@@ -145,7 +145,7 @@ exports.updateUser = async function(req, res){
 exports.validateUser = function(req, res){
     logger.log("validate user " + req.body.username).msg();
     passport.authenticate('local', {
-        successRedirect: `/dashboard/${req.body.username}`,
+        successRedirect: `/users/dashboard/${req.body.username}`,
         failureRedirect: "/",
         failureFlash: true
     })(req, res);

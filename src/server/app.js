@@ -58,7 +58,7 @@ app.use(passport.session());
 app.use(morgan("dev"));
 app.use(express.json());
 //app.use("/api/v1/users", userRoutes);
-app.use("/", userRoutes);
+app.use("/users", userRoutes);
 
 //Set home page to Login Page and render
 app.get("/", function (req, res){
