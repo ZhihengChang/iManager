@@ -12,28 +12,28 @@
     {
         "userid": 1002,
         "username": "toms",
-        "password": ""
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
     },
     {
         "userid": 1003,
         "username": "bella",
-        "password": ""
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
     },
     {
         "userid": 1004,
         "username": "yushuf",
-        "password": ""
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
     },
     {
         "userid": 1005,
         "username": "johns",
-        "password": ""
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
     },
     {
         "userid": 1006,
         "username": "maxm",
-        "password": ""
-    }
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
+    },
     {
         "userid": 1007,
         "username": "test",

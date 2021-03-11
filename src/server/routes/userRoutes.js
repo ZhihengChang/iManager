@@ -3,16 +3,13 @@ const userController = require("../controllers/userController");
 
 const router = express.Router();
 
-// router.use(userController.validateAuthToken);
-// router.param("id", userController.validateUserId);
-
 //Routes
 router.route('/login')
     .post(userController.validateUser);
 
-// router.route('/')
-//     .get(userController.getAllUser)
-//     .post(userController.createUser);
+router.route('/')
+    .get(userController.getAllUser)
+    .post(userController.createUser);
 
 router.route('/:id')
     .get(userController.getUser)
