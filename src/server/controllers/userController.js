@@ -142,6 +142,7 @@ exports.validateUser = function (req, res) {
  * @param {Response} res 
  */
 exports.renderUserDashboard = catchAsync(async function (req, res, next) {
+    console.log(req.body)
     const user = await User.findOne({ username: req.params.username }).lean();
     res.render("dashboard", {
         userInfo: user
