@@ -1,0 +1,37 @@
+{
+    "platform": "iManager",
+
+    "default": {
+        "base": "/",
+        "page": "login"
+    },
+
+    "users": {
+        "base": "/users",
+        "userRoot": "/",
+        "userProfile": "/:id",
+        "userLogin": "/login",
+        "userLogout": "/logout",
+        "userDashboard": "/dashboard/home"
+    },
+
+    "schedule": {
+        "base": "/schedule",
+        "scheduleRoot": "/",
+        "scheduleView": "/:username",
+        "ScheduleCreation": "/create"
+    },
+
+    "request": {
+        "base": "/requests",
+        "requestRoot": "/",
+        "RequestCreation": "/create",
+        "RequestHandling": "/handle"
+    },
+
+    "payroll": {
+        "base": "/payroll",
+        "payrollRoot": "/",
+        "payrollView": "/:username"
+    }
+}
