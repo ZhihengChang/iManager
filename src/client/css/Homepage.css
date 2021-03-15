@@ -10,6 +10,13 @@ body{
     background: pink;
 }
 
+.welcome{
+    position: absolute;
+    left: 120px;
+    font-size: 30px;
+    padding: 12px 10px;
+}
+
 .sidenav{
     position: fixed;
     width: 60px;
@@ -17,16 +24,18 @@ body{
     background: black;
     transition: 0.5s;
     overflow: hidden;
+    z-index: 9;
 }
 
 .sidenav:hover,
 .sidenav.active{
     width: 300px;
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, .5);
 }
 
 .sidenav ul{
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
     width: 100%;
 }
