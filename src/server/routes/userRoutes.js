@@ -20,6 +20,6 @@ router.route(routes.userProfile)
 
 router.route('/dashboard/:username')
 // router.route(routes.userDashboard)
-    .post(userController.renderUserDashboard);
+    .get(userController.renderUserDashboard);
 
 module.exports = router;
