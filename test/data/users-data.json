@@ -4,19 +4,19 @@
         "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
         "email": "adamc123@gmail.com",
         "isAdmin": true,
-        "schedule": [],
+        "schedule": [{}],
         "createTime": 1615844569407,
         "lastLogin": 0,
-        "request": []
+        "request": [{}]
     },
     {
         "username": "bruce!@day",
         "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
         "email": "bruced@gmail.com",
         "isAdmin": true,
-        "schedule": [],
+        "schedule": [{}],
         "createTime": 1615844569407,
         "lastLogin": 0,
-        "request": []
+        "request": [{}]
     }
 ]
