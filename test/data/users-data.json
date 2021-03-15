@@ -1,42 +1,22 @@
 [
     {
-        "userid": 1000,
-        "username": "changz",
-        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
+        "username": "adamc123",
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
+        "email": "adamc123@gmail.com",
+        "isAdmin": true,
+        "schedule": [{}],
+        "createTime": 1615844569407,
+        "lastLogin": 0,
+        "request": [{}]
     },
     {
-        "userid": 1001,
-        "username": "millsh",
-        "password": "4567"
-    },
-    {
-        "userid": 1002,
-        "username": "toms",
-        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
-    },
-    {
-        "userid": 1003,
-        "username": "bella",
-        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
-    },
-    {
-        "userid": 1004,
-        "username": "yushuf",
-        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
-    },
-    {
-        "userid": 1005,
-        "username": "johns",
-        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
-    },
-    {
-        "userid": 1006,
-        "username": "maxm",
-        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6"
-    },
-    {
-        "userid": 1007,
-        "username": "test",
-        "password": "$2a$09$6UKhNVTzptF.Fyl.WTw2q.6420GMIC9Iczu/9Ex5vX2Z9WXei9o9m"
+        "username": "bruce!@day",
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
+        "email": "bruced@gmail.com",
+        "isAdmin": true,
+        "schedule": [{}],
+        "createTime": 1615844569407,
+        "lastLogin": 0,
+        "request": [{}]
     }
 ]

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const scheduleSchema = require('./scheduleModel')
-const requestSchema = require('./requestModel')
+const scheduleSchema = require('./scheduleModel').schema;
+const requestSchema = require('./requestModel').schema;
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -23,10 +23,7 @@ const userSchema = new mongoose.Schema({
         default: false
     },
 
-    schedule: {
-        type: [scheduleSchema],
-        required: [true, 'A user must have a schedule']
-    },
+    schedule: [scheduleSchema],
 
     createTime: {
         type: Date,
@@ -40,11 +37,7 @@ const userSchema = new mongoose.Schema({
         required: [true, 'A user account must have a last login time']
     },
 
-    request: {
-        type: [requestSchema],
-        default: [],
-        required: [false, 'A user does not need to have a request']
-    }
+    request: [requestSchema]
 
 });
 const User = mongoose.model('User', userSchema);

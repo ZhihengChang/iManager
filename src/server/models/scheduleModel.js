@@ -6,12 +6,12 @@ const scheduleSchema = new mongoose.Schema({
         min: 1,
         max: 52,
         default: 1,
-        required: [true, 'Must have a week number']
+        //required: [true, 'Must have a week number']
     },
 
     year: {
         type: Number,
-        required: [true, 'Must have a year']
+        //required: [true, 'Must have a year']
     },
     //set boundaries for weekly hours from 0-168 (168 is max number of hours in one week)
     weeklyHours: {
@@ -19,7 +19,7 @@ const scheduleSchema = new mongoose.Schema({
         min: 0,
         max: 168,
         default: 40,
-        required: [true, 'Must have number of weekly hours']
+        //required: [true, 'Must have number of weekly hours']
     },
 
     monday: {
