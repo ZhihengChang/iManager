@@ -18,5 +18,15 @@
         "createTime": 1615844569407,
         "lastLogin": 0,
         "request": [{}]
+    },
+    {
+        "username": "test",
+        "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
+        "email": "test@gmail.com",
+        "isAdmin": false,
+        "schedule": [{}],
+        "createTime": 1615844569407,
+        "lastLogin": 0,
+        "request": [{}]
     }
 ]

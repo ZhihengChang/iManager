@@ -127,7 +127,7 @@ exports.updateUser = catchAsync(async function (req, res, next) {
  * @param {Response} res 
  */
 exports.validateUser = function (req, res) {
-    logger.log("validate user " + req.body.username).msg();
+    logger.log(`validate user "${req.body.username}"`).msg();
 
     passport.authenticate('local', {
         successRedirect: `/users/dashboard/${req.body.username}`,
@@ -137,12 +137,23 @@ exports.validateUser = function (req, res) {
 }
 
 /**
+ * log out user
+ * @param {Request} req 
+ * @param {Response} res 
+ */
+exports.logOutUser = function (req, res){
+    logger.log("logged out user").msg();
+    req.logOut();
+    req.flash("success_message", "You are now logged out");
+    res.redirect("/");
+}
+
+/**
  * Render user dashboard after successful login
  * @param {Request} req 
  * @param {Response} res 
  */
 exports.renderUserDashboard = catchAsync(async function (req, res, next) {
-    console.log(req.body)
     const user = await User.findOne({ username: req.params.username }).lean();
     res.render("dashboard", {
         userInfo: user
