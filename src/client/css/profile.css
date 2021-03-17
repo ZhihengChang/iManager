@@ -14,16 +14,19 @@ body{
 
 .wrapper{
   position: absolute;
-  top: 50%;
+  top: 23%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 450px;
+  height: 20%;
+  width: 60%;
+  min-width: 450px;
+  min-height: 250px;
   display: flex;
   box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
 }
 
 .wrapper .left{
-  width: 35%;
+  width: 200px;
   background: linear-gradient(to right,black,black);
   padding: 30px 25px;
   border-top-left-radius: 5px;
@@ -46,7 +49,7 @@ body{
 }
 
 .wrapper .right{
-  width: 65%;
+  width: 100%;
   background: #fff;
   padding: 30px 25px;
   border-top-right-radius: 5px;
@@ -94,6 +97,9 @@ body{
 
 .wrapper .social_media ul{
   display: flex;
+  float: right;
+  position: relative;
+  top: 45px;
 }
 
 .wrapper .social_media ul li{
