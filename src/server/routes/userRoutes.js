@@ -14,7 +14,7 @@ router.route(routes.userLogout)
     .get(userController.logOutUser);
 
 router.route(routes.userProfile)
-    .get(userController.renderUserProfile);
+    .get(ensureEmployeeAuthenticated, userController.renderUserProfile);
 
 router.route(routes.userRoot)
     .get(userController.getAllUser)

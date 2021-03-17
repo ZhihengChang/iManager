@@ -185,13 +185,9 @@ exports.renderUserProfile = catchAsync(async function (req, res, next) {
     util.deleteProperties(faculty, [
         "bankAccountNumber", "isDirectDeposit"
     ]);
-    let userProfile = util.merge([user, faculty]);
+    let userInfo = util.merge([user, faculty]);
 
-    util.sendResponse(res, 200, {
-        status: 'success',
-        data: userProfile
-    });
     res.render("profile", {
-        userProfile
+        userInfo
     });
 });
