@@ -20,9 +20,9 @@
         "request": [{}]
     },
     {
-        "username": "test",
+        "username": "glassr",
         "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
-        "email": "test@gmail.com",
+        "email": "glassr@gmail.com",
         "isAdmin": false,
         "schedule": [{}],
         "createTime": 1615844569407,
