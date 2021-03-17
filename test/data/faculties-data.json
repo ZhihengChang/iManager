@@ -1,0 +1,38 @@
+[
+    {
+        "email": "adamc123@gmail.com",
+        "firstName": "Charles",
+        "lastName": "Adam",
+        "jobPosition": "Store Manager",
+        "phoneNumber": "6175604095",
+        "companyName": true,
+        "socialSecurityNumber": 491071328,
+        "wage": 52.5,
+        "bankAccountNumber": 12690083219,
+        "isDirectDeposit": true
+    },
+    {
+        "email": "bruced@gmail.com",
+        "firstName": "Dan",
+        "lastName": "Bruce",
+        "jobPosition": "Store Manager",
+        "phoneNumber": "6174359231",
+        "companyName": true,
+        "socialSecurityNumber": 491073287,
+        "wage": 50.0,
+        "bankAccountNumber": 12690083219,
+        "isDirectDeposit": true
+    },
+    {
+        "email": "glassr@gmail.com",
+        "firstName": "Ryan",
+        "lastName": "Glass",
+        "jobPosition": "Cashier",
+        "phoneNumber": "6174496578",
+        "companyName": "Whole Foods",
+        "socialSecurityNumber": 491074857,
+        "wage": 20.0,
+        "bankAccountNumber": 12690083219,
+        "isDirectDeposit": true
+    }
+]
