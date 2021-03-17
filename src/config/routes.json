@@ -9,7 +9,8 @@
     "users": {
         "base": "/users",
         "userRoot": "/",
-        "userProfile": "/:id",
+        "userInfo": "/:id",
+        "userProfile": "/profile/:username",
         "userLogin": "/login",
         "userLogout": "/logout",
         "userDashboard": "/dashboard/home"

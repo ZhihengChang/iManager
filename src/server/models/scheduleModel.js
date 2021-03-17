@@ -77,5 +77,5 @@ const scheduleSchema = new mongoose.Schema({
         }
     }
 });
-const User = mongoose.model('Schedule', scheduleSchema);
-module.exports = User;
+const Schedule = mongoose.model('Schedule', scheduleSchema);
+module.exports = Schedule;

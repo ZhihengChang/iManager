@@ -52,5 +52,5 @@ const facultySchema = new mongoose.Schema({
         required: [true, 'Must have a social security number']
     }
 });
-const User = mongoose.model('Faculty', facultySchema);
-module.exports = User;
+const faculty = mongoose.model('Faculty', facultySchema);
+module.exports = faculty;

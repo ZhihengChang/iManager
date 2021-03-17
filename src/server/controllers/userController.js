@@ -13,6 +13,7 @@ const DBAPI = require('../../util/DBAPI');
 const catchAsync = require('../../util/error/catchAsync');
 //Models
 const User = require('../models/userModel');
+const Faculty = require('../models/facultyModel');
 const passport = require('passport');
 const AppError = require('../../util/error/appError');
 
@@ -26,8 +27,6 @@ logger.details(true);
 
 /**
  * Get specific user by object id
- * @param {Request} req 
- * @param {Response} res 
  */
 exports.getUser = catchAsync(async function (req, res, next) {
     let id = req.params.id;
@@ -45,8 +44,6 @@ exports.getUser = catchAsync(async function (req, res, next) {
 
 /**
  * Get all users in user collections
- * @param {Request} req 
- * @param {Response} res 
  */
 exports.getAllUser = catchAsync(async function (req, res, next) {
     logger.log("get all users").msg();
@@ -68,8 +65,6 @@ exports.getAllUser = catchAsync(async function (req, res, next) {
 
 /**
  * Create a user based on request body
- * @param {Request} req 
- * @param {Response} res 
  */
 exports.createUser = catchAsync(async function (req, res, next) {
     logger.log("create user").msg();
@@ -83,8 +78,6 @@ exports.createUser = catchAsync(async function (req, res, next) {
 
 /**
  * Delete a specific user by object id
- * @param {Request} req 
- * @param {Response} res 
  */
 exports.deleteUser = catchAsync(async function (req, res, next) {
     logger.log("delete user " + req.params.id).msg();
@@ -101,8 +94,6 @@ exports.deleteUser = catchAsync(async function (req, res, next) {
 
 /**
  * Update a user based on request body
- * @param {Request} req 
- * @param {Response} res 
  */
 exports.updateUser = catchAsync(async function (req, res, next) {
     let id = req.params.id
@@ -150,12 +141,57 @@ exports.logOutUser = function (req, res){
 
 /**
  * Render user dashboard after successful login
- * @param {Request} req 
- * @param {Response} res 
  */
 exports.renderUserDashboard = catchAsync(async function (req, res, next) {
     const user = await User.findOne({ username: req.params.username }).lean();
     res.render("dashboard", {
         userInfo: user
+    });
+});
+
+exports.renderUserProfile = catchAsync(async function (req, res, next) {
+    const username = req.params.username;
+    const user = await User.findOne({ username }).lean();
+
+    //user not exist
+    if(!user){
+        return next(
+            new AppError(
+                `No user found with username ${username}.`, 
+                404
+            )
+        );
+    }
+
+    //get faculty document
+    const faculty = await Faculty.findOne({
+        email: user.email
+    }).lean();
+
+    //faculty not exist
+    if(!faculty){
+        return next(
+            new AppError(
+                `No employee record found.`, 
+                404
+            )
+        );
+    }
+
+    //combine document
+    util.deleteProperties(user, [
+        "password", "schedule", "request"
+    ]);
+    util.deleteProperties(faculty, [
+        "bankAccountNumber", "isDirectDeposit"
+    ]);
+    let userProfile = util.merge([user, faculty]);
+
+    util.sendResponse(res, 200, {
+        status: 'success',
+        data: userProfile
+    });
+    res.render("profile", {
+        userProfile
     });
 });

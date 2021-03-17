@@ -13,11 +13,14 @@ router.route(routes.userLogin)
 router.route(routes.userLogout)
     .get(userController.logOutUser);
 
+router.route(routes.userProfile)
+    .get(userController.renderUserProfile);
+
 router.route(routes.userRoot)
     .get(userController.getAllUser)
     .post(userController.createUser);
 
-router.route(routes.userProfile)
+router.route(routes.userInfo)
     .get(userController.getUser)
     .patch(userController.updateUser)
     .delete(userController.deleteUser);
