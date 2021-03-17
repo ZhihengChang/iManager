@@ -16,5 +16,5 @@ const requestSchema = new mongoose.Schema({
         //required: [false, 'Description not required']
     }
 });
-const User = mongoose.model('Request', requestSchema);
-module.exports = User;
+const Request = mongoose.model('Request', requestSchema);
+module.exports = Request;
