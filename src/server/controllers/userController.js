@@ -95,20 +95,49 @@ exports.deleteUser = catchAsync(async function (req, res, next) {
 /**
  * Update a user based on request body
  */
-exports.updateUser = catchAsync(async function (req, res, next) {
-    console.log(req.body)
-    let id = req.params.id
-    logger.log("update user " + id).msg();
+exports.updateUserProfile = catchAsync(async function (req, res, next) {
+    
+    let user_id = req.params.userid;
+    let employee_id = req.params.employeeid;
+    console.log(employee_id);
 
-    const user = await User.findByIdAndUpdate(id, req.body, {
+    logger.log("update user " + user_id).msg();
+    console.log(req.body);
+
+    const updateOption = {
         new: true,              //return updated document
         runValidators: true,    //validate model  
-    });
+    };
+
+    const user = await User.findByIdAndUpdate(user_id, {
+        username:   req.body.username,
+        email:      req.body.email,
+    }, updateOption);
+
     if(!user){
-        return next(new AppError(`No user found with Id ${id}`, 404));
+        return next(
+            new AppError(
+                `No user found with Id ${user_id}`, 
+                404
+            )
+        );
     }
 
-    //add if statement to seperate 2 update DB calls
+    const employee = await Faculty.findByIdAndUpdate(employee_id, {
+        firstName:      req.body.firstName,
+        lastName:       req.body.lastName,
+        phoneNumber:    req.body.phoneNumber,
+        email:          req.body.email,
+    }, updateOption);
+
+    if(!employee){
+        return next(
+            new AppError(
+                `No Employee found with Id ${employee_id}`, 
+                404
+            )
+        );
+    }
 
     const profileRoute = `/users/profile/${user.username}`;
     res.redirect(profileRoute);
@@ -159,9 +188,17 @@ exports.renderUserDashboard = catchAsync(async function (req, res, next) {
     const employeeUser = await Faculty.findOne({ email: user.email }).lean();
 
     const userInfo = {
-        ...user,
-        ...employeeUser
+        user_id:        user._id,
+        employee_id:    employeeUser._id,
+        username:       user.username,
+        firstName:      employeeUser.firstName,
+        lastName:       employeeUser.lastName,
+        phoneNumber:    employeeUser.phoneNumber,
+        email:          user.email,
+
     }
+
+    console.log(userInfo);
 
     res.render("edprofile", {
         userInfo

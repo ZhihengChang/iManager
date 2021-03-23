@@ -1,12 +1,13 @@
 <div id="sc-edprofile">
     <h1>Edit Profile Form</h1>
     <div class="sc-container">
-      <% const updateUser = `/users/${userInfo._id}` %>
+      <% const updateUser = `/users/${userInfo.user_id}/${userInfo.employee_id}` %>
       <form action="<%= updateUser %>" method="post">
         <input name="username" type="text" placeholder="Username" value="<%= userInfo.username %>" />
         <input name="email" type="email" placeholder="Email" value="<%= userInfo.email %>" />
         <input name="firstName" type="text" placeholder="First Name" value="<%= userInfo.firstName %>" />
         <input name="lastName" type="text" placeholder="Last Name" value="<%= userInfo.lastName %>" />
+        <input name="phoneNumber" type="text" placeholder="Phone Number" value="<%= userInfo.phoneNumber %>" />
         <textarea placeholder="Bio"></textarea>
         <select>
           <option value="">Male</option>
@@ -14,7 +15,7 @@
         </select>
         <input type="text" placeholder="LinkedIn Profile URL" />
         
-        <button type="submit" name="submit" class="btn btn-secondary">Submit</button>
+        <button type="submit" class="btn btn-secondary">Submit</button>
       </form>
       <% const profileRoute = `/users/profile/${userInfo.username}` %>
       <button name="cancel" class="btn btn-secondary" onclick="location.href='/'">Cancel</button>
