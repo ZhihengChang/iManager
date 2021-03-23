@@ -11,6 +11,7 @@
         "userRoot": "/",
         "userInfo": "/:id",
         "userProfile": "/profile/:username",
+        "userProfileEdit": "/profile/:username/edit",
         "userLogin": "/login",
         "userLogout": "/logout",
         "userDashboard": "/dashboard/home"

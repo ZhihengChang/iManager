@@ -96,6 +96,7 @@ exports.deleteUser = catchAsync(async function (req, res, next) {
  * Update a user based on request body
  */
 exports.updateUser = catchAsync(async function (req, res, next) {
+    console.log(req.body)
     let id = req.params.id
     logger.log("update user " + id).msg();
 
@@ -106,10 +107,11 @@ exports.updateUser = catchAsync(async function (req, res, next) {
     if(!user){
         return next(new AppError(`No user found with Id ${id}`, 404));
     }
-    util.sendResponse(res, 204, {
-        status: 'success',
-        data: null,
-    });
+
+    //add if statement to seperate 2 update DB calls
+
+    const profileRoute = `/users/profile/${user.username}`;
+    res.redirect(profileRoute);
 });
 
 /**
@@ -149,6 +151,27 @@ exports.renderUserDashboard = catchAsync(async function (req, res, next) {
     });
 });
 
+/**
+ * Render edit user profile page on click
+ */
+ exports.renderEditProfile = catchAsync(async function (req, res, next) {
+    const user = await User.findOne({ username: req.params.username }).lean();
+    const employeeUser = await Faculty.findOne({ email: user.email }).lean();
+
+    const userInfo = {
+        ...user,
+        ...employeeUser
+    }
+
+    res.render("edprofile", {
+        userInfo
+    });
+});
+
+
+/**
+ * Render user profile page on click
+ */
 exports.renderUserProfile = catchAsync(async function (req, res, next) {
     const username = req.params.username;
     const user = await User.findOne({ username }).lean();
