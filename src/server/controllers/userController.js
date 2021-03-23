@@ -138,7 +138,8 @@ exports.updateUserProfile = catchAsync(async function (req, res, next) {
             )
         );
     }
-
+    req.flash("success_message", "You are profile has been updated");
+    
     const profileRoute = `/users/profile/${user.username}`;
     res.redirect(profileRoute);
 });

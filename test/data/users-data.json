@@ -4,7 +4,36 @@
         "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
         "email": "adamc123@gmail.com",
         "isAdmin": true,
-        "schedule": [{}],
+        "schedule": [{
+            "weekNumber": 1,
+            "year": 2021,
+            "weeklyHours": 40,
+            "monday": {
+
+                "startTime": 9,
+                "endTime": 17
+            },
+            "tuesday": {
+
+                "startTime": 9,
+                "endTime": 17
+            },
+            "wednesday": {
+
+                "startTime": 9,
+                "endTime": 17
+            },
+            "thursday": {
+
+                "startTime": 9,
+                "endTime": 17
+            },
+            "friday": {
+
+                "startTime": 9,
+                "endTime": 17
+            }           
+        }],
         "createTime": 1615844569407,
         "lastLogin": 0,
         "request": [{}]
@@ -14,7 +43,36 @@
         "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
         "email": "bruced@gmail.com",
         "isAdmin": true,
-        "schedule": [{}],
+        "schedule": [{
+            "weekNumber": 1,
+            "year": 2021,
+            "weeklyHours": 30,
+            "monday": {
+
+                "startTime": 9,
+                "endTime": 14
+            },
+            "tuesday": {
+
+                "startTime": 9,
+                "endTime": 14
+            },
+            "wednesday": {
+
+                "startTime": 9,
+                "endTime": 14
+            },
+            "thursday": {
+
+                "startTime": 9,
+                "endTime": 14
+            },
+            "friday": {
+
+                "startTime": 9,
+                "endTime": 14
+            }  
+        }],
         "createTime": 1615844569407,
         "lastLogin": 0,
         "request": [{}]
@@ -24,7 +82,36 @@
         "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
         "email": "glassr@gmail.com",
         "isAdmin": false,
-        "schedule": [{}],
+        "schedule": [{
+            "weekNumber": 1,
+            "year": 2021,
+            "weeklyHours": 40,
+            "monday": {
+
+                "startTime": 9,
+                "endTime": 17
+            },
+            "tuesday": {
+
+                "startTime": 9,
+                "endTime": 17
+            },
+            "wednesday": {
+
+                "startTime": 9,
+                "endTime": 17
+            },
+            "thursday": {
+
+                "startTime": 9,
+                "endTime": 17
+            },
+            "friday": {
+
+                "startTime": 9,
+                "endTime": 17
+            }  
+        }],
         "createTime": 1615844569407,
         "lastLogin": 0,
         "request": [{}]
