@@ -22,10 +22,12 @@ router.route(routes.userRoot)
 
 router.route(routes.userInfo)
     .get(userController.getUser)
-    .post(userController.updateUser)
     .delete(userController.deleteUser);
 
-router.route('/dashboard/:username')
+router.route(routes.userProfileUpdate)
+    .post(userController.updateUserProfile);
+
+router.route(routes.userDashboard)
 // router.route(routes.userDashboard)
     .get(ensureEmployeeAuthenticated, userController.renderUserDashboard);
 
