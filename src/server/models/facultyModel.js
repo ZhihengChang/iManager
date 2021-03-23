@@ -20,6 +20,11 @@ const facultySchema = new mongoose.Schema({
         required: [true, 'Must have a last name']
     },
 
+    gender: {
+        type: String,
+        required: [false, 'Do not need to provide gender']
+    },
+
     jobPosition: {
         type: String,
         required: [true, 'Must have a job position']
