@@ -8,30 +8,55 @@
             "weekNumber": 1,
             "year": 2021,
             "weeklyHours": 40,
-            "monday": {
-
-                "startTime": 9,
-                "endTime": 17
+            "monday": {    
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             },
             "tuesday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             },
             "wednesday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             },
             "thursday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             },
             "friday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             }           
         }],
         "createTime": 1615844569407,
@@ -48,29 +73,54 @@
             "year": 2021,
             "weeklyHours": 30,
             "monday": {
-
-                "startTime": 9,
-                "endTime": 14
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 14,
+                    "minutes": 0
+                }
             },
             "tuesday": {
-
-                "startTime": 9,
-                "endTime": 14
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 14,
+                    "minutes": 0
+                }
             },
             "wednesday": {
-
-                "startTime": 9,
-                "endTime": 14
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 14,
+                    "minutes": 0
+                }
             },
             "thursday": {
-
-                "startTime": 9,
-                "endTime": 14
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 14,
+                    "minutes": 0
+                }
             },
             "friday": {
-
-                "startTime": 9,
-                "endTime": 14
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 14,
+                    "minutes": 0
+                }
             }  
         }],
         "createTime": 1615844569407,
@@ -87,29 +137,54 @@
             "year": 2021,
             "weeklyHours": 40,
             "monday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             },
             "tuesday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             },
             "wednesday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             },
             "thursday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             },
             "friday": {
-
-                "startTime": 9,
-                "endTime": 17
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
             }  
         }],
         "createTime": 1615844569407,

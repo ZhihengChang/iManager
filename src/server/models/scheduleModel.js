@@ -33,8 +33,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Monday']
+            }
         },
         endTime: {
             hours: {
@@ -46,8 +45,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Monday']
+            }
         }
     },
 
@@ -62,8 +60,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Tuesday']
+            }
         },
         endTime: {
             hours: {
@@ -75,8 +72,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Tuesday']
+            }
         }
     },
 
@@ -91,8 +87,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Wednesday']
+            }
         },
         endTime: {
             hours: {
@@ -104,8 +99,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Wednesday']
+            }
         }
     },
 
@@ -120,8 +114,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Thursday']
+            }
         },
         endTime: {
             hours: {
@@ -133,8 +126,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Thursday']
+            }
         }
     },
 
@@ -149,8 +141,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Friday']
+            }
         },
         endTime: {
             hours: {
@@ -162,8 +153,7 @@ const scheduleSchema = new mongoose.Schema({
                 type: Number,
                 min: 00,
                 max: 59
-            },
-            required: [false, 'Only required if working on Friday']
+            }
         }
     }
 });
