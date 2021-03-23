@@ -24,55 +24,145 @@ const scheduleSchema = new mongoose.Schema({
 
     monday: {
         startTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Monday']
         },
         endTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Monday']
         }
     },
 
     tuesday: {
         startTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Tuesday']
         },
         endTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Tuesday']
         }
     },
 
     wednesday: {
         startTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Wednesday']
         },
         endTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Wednesday']
         }
     },
 
     thursday: {
         startTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Thursday']
         },
         endTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Thursday']
         }
     },
 
     friday: {
         startTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Friday']
         },
         endTime: {
-            type: Date,
+            hours: {
+                type: Number,
+                min: 00,
+                max: 23
+            },
+            minutes: {
+                type: Number,
+                min: 00,
+                max: 59
+            },
             required: [false, 'Only required if working on Friday']
         }
     }
