@@ -22,11 +22,14 @@ router.route(routes.userRoot)
 
 router.route(routes.userInfo)
     .get(userController.getUser)
-    .patch(userController.updateUser)
+    .post(userController.updateUser)
     .delete(userController.deleteUser);
 
 router.route('/dashboard/:username')
 // router.route(routes.userDashboard)
     .get(ensureEmployeeAuthenticated, userController.renderUserDashboard);
+
+router.route(routes.userProfileEdit)
+    .get(userController.renderEditProfile);
 
 module.exports = router;
