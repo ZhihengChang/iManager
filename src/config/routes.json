@@ -12,9 +12,10 @@
         "userInfo": "/:id",
         "userProfile": "/profile/:username",
         "userProfileEdit": "/profile/:username/edit",
+        "userProfileUpdate": "/:userid/:employeeid",
         "userLogin": "/login",
         "userLogout": "/logout",
-        "userDashboard": "/dashboard/home"
+        "userDashboard": "/dashboard/:username"
     },
 
     "schedule": {
