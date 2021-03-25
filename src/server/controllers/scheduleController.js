@@ -12,3 +12,19 @@ exports.renderSchedule = catchAsync(async function (req, res, next) {
 
 });
 
+//Gets all user schedules and displays all of the times for each user
+exports.getAllSchedule = catchAsync(async function (req, res, next) {
+    const users = await User.find({}, function(error, users){
+    if(error){
+        console.log(error)
+    } else {
+        const schedules = [];
+        for(let i = 0; i < users.length; i++){
+            schedules.push(users[i].schedule);
+        }
+        res.send(schedules);
+    }
+    }).lean();
+    
+});
+

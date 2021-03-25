@@ -20,9 +20,9 @@
 
     "schedule": {
         "base": "/schedule",
-        "scheduleRoot": "/",
         "scheduleView": "/:username",
-        "ScheduleCreation": "/create"
+        "ScheduleCreation": "/create",
+        "allSchedules": "/"
     },
 
     "request": {
