@@ -1,7 +1,7 @@
 const express = require("express");
 //get all users routes
 const {ensureEmployeeAuthenticated, ensureAdminAuthenticated} = require("../../config/auth");
-const routes = require("../../config/routes.json").users;
+const routes = require("../../config/routes.json").users;    
 const userController = require("../controllers/userController");
 
 const router = express.Router();
@@ -11,7 +11,7 @@ router.route(routes.userLogin)
     .post(userController.validateUser);
 
 router.route(routes.userLogout)
-    .get(userController.logOutUser);
+    .get(ensureEmployeeAuthenticated, userController.logOutUser);
 
 router.route(routes.userProfile)
     .get(ensureEmployeeAuthenticated, userController.renderUserProfile);
@@ -32,6 +32,6 @@ router.route(routes.userDashboard)
     .get(ensureEmployeeAuthenticated, userController.renderUserDashboard);
 
 router.route(routes.userProfileEdit)
-    .get(userController.renderEditProfile);
+    .get(ensureEmployeeAuthenticated, userController.renderEditProfile);
 
 module.exports = router;
