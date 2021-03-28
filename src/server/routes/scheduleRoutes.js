@@ -7,7 +7,9 @@ const scheduleController = require("../controllers/scheduleController");
 
 
 router.route(routes.scheduleView)
-    .get(ensureEmployeeAuthenticated, scheduleController.renderSchedule);
+    .get(scheduleController.renderSchedule);
 
+router.route(routes.allSchedules)
+    .get(scheduleController.getAllSchedule);
 
 module.exports = router;
