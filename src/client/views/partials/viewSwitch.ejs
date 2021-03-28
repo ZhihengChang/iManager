@@ -1,0 +1,25 @@
+<div class="viewSwitchContainer">
+    <ul id="viewSwitch">
+        <li class="SwitchButton" onclick="handleViewSwitch()">Day</li>
+        <li class="SwitchButton" onclick="handleViewSwitch()">Week</li>
+        <li class="SwitchButton" onclick="handleViewSwitch()">Month</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    const viewSwitch = document.querySelector('#viewSwitch');
+    const switchBtns = viewSwitch.children;
+    for(let key in Object.keys(switchBtns)){
+        switchBtns[key].addEventListener('onclick', handleViewSwitch);
+        console.log("function add");
+    }
+
+    function handleViewSwitch(){
+
+        //handle focus & not focus
+
+        //send request
+
+        console.log(event.target);
+    }
+</script>
