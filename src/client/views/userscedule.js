@@ -14,7 +14,7 @@ $(function() {
         start: '8:00',
         end: '20:00',
       },
-      lang: /^en-/.test(navigator.language) ? 'en' : 'zh-cn',
+      lang: /^en-/.test(navigator.language) ? 'en' : 'en',
       eventOverlap: function(stillEvent, movingEvent) {
         return true;
       },

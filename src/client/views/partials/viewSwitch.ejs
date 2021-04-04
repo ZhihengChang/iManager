@@ -1,5 +1,6 @@
 <div class="viewSwitchContainer">
     <ul id="viewSwitch">
+
         <button class="SwitchButton" onclick="handleViewSwitch('Day', this, 'skyblue')">Day</buttion>
         <button class="SwitchButton" onclick="handleViewSwitch('Week', this, 'skyblue')">Week</button>
         <button class="SwitchButton" onclick="handleViewSwitch('Month', this, 'skyblue')">Month</button>
@@ -26,6 +27,13 @@
             element.style.backgroundColor = color;
     }
 
+        <li class="SwitchButton" onclick="handleViewSwitch()">Day</li>
+        <li class="SwitchButton" onclick="handleViewSwitch()">Week</li>
+        <li class="SwitchButton" onclick="handleViewSwitch()">Month</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
     const viewSwitch = document.querySelector('#viewSwitch');
     const switchBtns = viewSwitch.children;
     for(let key in Object.keys(switchBtns)){
@@ -33,6 +41,17 @@
         console.log("function add");
     }
 
+
         console.log(event.target);
+
+
+    function handleViewSwitch(){
+
+        //handle focus & not focus
+
+        //send request
+
+        console.log(event.target);
+    }
 
 </script>
