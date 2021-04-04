@@ -1,5 +1,8 @@
 /* viewSwitch */
 
+* {box-sizing: border-box}
+
+
 .viewSwitchContainer{
     position: absolute;
     left: 70px;
@@ -8,6 +11,7 @@
     height: 30px;
     width: 200px;
 }
+
 
 #viewSwitch{
     height: 100%;
@@ -24,6 +28,12 @@
     background-color: white;
     text-align: center;
 }
+
+
+.SwitchButton:hover{
+    background-color: skyblue;
+}
+
 
 /* day */
 .SwitchButton:nth-child(1){
@@ -68,6 +78,21 @@
 
 .tab{
     height: 100%;
+    width: 14.26%;
+    padding: 5px;
+    margin-right: -4px;
+    background-color: rgb(204, 198, 198);
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+.tab:hover{
+    background-color: white;
+}
+
+.tabcontent{
+    color: black;
     width: 14.3%;
     display: inline-block;
     padding: 5px;
