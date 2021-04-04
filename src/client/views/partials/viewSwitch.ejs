@@ -14,9 +14,9 @@
 <script type="text/javascript">
     function handleViewSwitch(pageName, element, color){
         var tabcontent, tablinks;
-        calender = document.getElementsByClassName("calender");
+        tabcontent = document.getElementsByClassName("calender");
         tablinks = document.getElementsByClassName("SwitchButton");
-        for (i = 0; i < calender.length; i++) {
+        for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
         for (var i = 0; i < tablinks.length; i++){
@@ -26,32 +26,4 @@
 
             element.style.backgroundColor = color;
     }
-
-        <li class="SwitchButton" onclick="handleViewSwitch()">Day</li>
-        <li class="SwitchButton" onclick="handleViewSwitch()">Week</li>
-        <li class="SwitchButton" onclick="handleViewSwitch()">Month</li>
-    </ul>
-</div>
-
-<script type="text/javascript">
-    const viewSwitch = document.querySelector('#viewSwitch');
-    const switchBtns = viewSwitch.children;
-    for(let key in Object.keys(switchBtns)){
-        switchBtns[key].addEventListener('onclick', handleViewSwitch);
-        console.log("function add");
-    }
-
-
-        console.log(event.target);
-
-
-    function handleViewSwitch(){
-
-        //handle focus & not focus
-
-        //send request
-
-        console.log(event.target);
-    }
-
 </script>

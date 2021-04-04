@@ -81,7 +81,8 @@
     width: 14.26%;
     padding: 5px;
     margin-right: -4px;
-    background-color: rgb(204, 198, 198);
+    color:white;
+    background-color: black;
     text-align: center;
     border: none;
     cursor: pointer;
@@ -93,23 +94,21 @@
 
 .tabcontent{
     color: black;
-    width: 14.3%;
-    display: inline-block;
+    height: 95%;
+    width: 99%;
     padding: 5px;
-    border: 1px solid black;
-    border-top: 2px solid black;
     margin-right: -4px;
-    background-color: white;
+    /* background-color: white; */
     text-align: center;
 }
 
 .tab:first-child{
-    border-left: 2px solid black;
+    /* border-left: 2px solid black; */
     border-top-left-radius: 0.5em;
 }
 
 .tab:last-child{
-    border-right: 2px solid black;
+    /* border-right: 2px solid black; */
     border-top-right-radius: 0.5em;
 }
 
@@ -122,4 +121,10 @@
     border-bottom-right-radius: 0.5em;
     border: 2px solid black;
     border-top: 0px;
+}
+
+.scheduleBlock{
+    height: 80%;
+    width: 20%;
+    background-color: white;
 }
