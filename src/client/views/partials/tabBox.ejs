@@ -1,0 +1,57 @@
+<div class="tabBoxContainer">
+    <div class="tabBar">
+        <ul class="tablist">
+            <!-- depends on the data send in .type = day | week | month, li content change  -->
+            
+            <button class="tab" onclick="openPage('Sunday', this, 'skyblue')">Sunday</button>
+            <button class="tab" onclick="openPage('Sunday', this, 'skyblue')" id="defaultopen">Monday</button>
+            <button class="tab" onclick="openPage('Sunday', this, 'skyblue')">Tuesday</button>
+            <button class="tab" onclick="openPage('Sunday', this, 'skyblue')">Wednesday</button>
+            <button class="tab" onclick="openPage('Sunday', this, 'skyblue')">Thursday</button>
+            <button class="tab" onclick="openPage('Sunday', this, 'skyblue')">Friday</button>
+            <button class="tab" onclick="openPage('Sunday', this, 'skyblue')">Satday</button>
+            
+        </ul>
+    </div>
+    <div id="Sunday" class="tabcontent">
+        <p>Today's Schedule</p>
+    </div>
+    <div id="Monday" class="tabcontent">
+        <p>Today's Schedule</p>
+    </div>
+    <div id="Tuesday" class="tabcontent">
+        <p>Today'sSchedule</p>
+    </div>
+    <div id="Wednesday" class="tabcontent">
+        <p>Today's Schedule</p>
+    </div>
+    <div id="Thursday" class="tabcontent">
+        <p>Today's Schedule</p>
+    </div>
+    <div id="Friday" class="tabcontent">
+        <p>Today's Schedule</p>
+    </div> 
+    <div id="Satday" class="tabcontent">
+        <p>Today's Schedule</p>
+    </div>
+
+    <script type="text/javascript">
+        function openPage(pageName, element, color){
+            var tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            for (var i = 0; i < tablinks.length; i++){
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+
+            element.style.backgroundColor = color;
+        }
+        document.getElementById("defaultopen").click();
+
+    </script>
+
+</div>
