@@ -1,0 +1,34 @@
+*{
+    font-family: "Lato", sans-serif;
+}
+
+h1, h4, h5 {
+    text-align: center;
+}
+
+fieldset {
+    margin: 1em auto;
+    background-color: #FAFCFF;
+    width: 60%;
+ }
+
+ form p {
+     text-align: center;
+    margin-top: 0.5em;
+ }
+
+form button{
+    width: 100%;
+    padding: 12px 10px;
+    text-align: center;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 5px;
+    border-radius: 30px;
+    background-color: pink;
+    color: black;
+    transition: .5s;
+}
+.error{
+    background-color: red;
+}
