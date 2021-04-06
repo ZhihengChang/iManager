@@ -1,0 +1,26 @@
+<%- include('./partials/sidebar.ejs') %>
+<%- include('./partials/errorMessages.ejs') %>
+<form id="requestform">
+    <fieldset>
+        <h1>Request Form</h1>
+
+        <h4><%= userInfo.firstName + " " + userInfo.lastName%></h4>
+        <h5>Username: <%= userInfo.username %></h5>
+
+        <label>Type:</label><br/>
+        <select>
+            <option>-Choose One Requeset Type-</option> 
+            <option>Schedule Change</option>
+            <option>Request Day-off</option>
+            <option>Others</option>
+         </select>
+        <p>
+            <label>Description:</label>
+            <textarea name="description" class="required"></textarea>
+        </p>
+
+        <button type="submit" class="btn btn-secondary">Submit</button>
+        <button type="submit" class="btn btn-secondary">Cancel</button>
+         
+    </fieldset>
+</form>
