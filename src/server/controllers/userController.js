@@ -99,10 +99,8 @@ exports.updateUserProfile = catchAsync(async function (req, res, next) {
     
     let user_id = req.params.userid;
     let employee_id = req.params.employeeid;
-    console.log(employee_id);
 
     logger.log("update user " + user_id).msg();
-    console.log(req.body);
 
     const updateOption = {
         new: true,              //return updated document
@@ -196,16 +194,12 @@ exports.renderUserDashboard = catchAsync(async function (req, res, next) {
         lastName:       employeeUser.lastName,
         phoneNumber:    employeeUser.phoneNumber,
         email:          user.email,
-
     }
-
-    console.log(userInfo);
 
     res.render("edprofile", {
         userInfo
     });
 });
-
 
 /**
  * Render user profile page on click

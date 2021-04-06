@@ -58,10 +58,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 65%;
+    height: 50%;
     width: 80%;
-    /* display: flex; */
-    box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
 }
 
 .tabBar{
@@ -72,13 +70,14 @@
 }
 
 .tablist{
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .tab{
     height: 100%;
-    width: 14.26%;
+    width: 100%;
     padding: 5px;
     margin-right: -4px;
     color:white;
@@ -94,12 +93,17 @@
 
 .tabcontent{
     color: black;
-    height: 95%;
-    width: 99%;
+    height: 100%;
+    width: 100%;
     padding: 5px;
     margin-right: -4px;
-    /* background-color: white; */
+    background-color: transparent;
     text-align: center;
+    /* border-left: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 20px 0 rgb(69 90 100 / 25%);
 }
 
 .tab:first-child{
@@ -113,18 +117,41 @@
 }
 
 .scheduleContainer{
-    display: block;
-    height: 95%;
-    width: 100%;
-    background-color: white;
-    border-bottom-left-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    border: 2px solid black;
-    border-top: 0px;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
 }
 
 .scheduleBlock{
     height: 80%;
     width: 20%;
     background-color: white;
+}
+
+.timeBlock {
+    margin: 15px;
+    box-shadow: 5px 5px 8px;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+    background: white;
+}
+
+.timeBlock:hover{
+    background: rgb(214, 214, 214);
+}
+
+.important_text {
+    font-weight: 600;
+}
+
+.scheduleTitle{
+    text-align: center;
+    margin: 15px 0px;
+    font-size: 2rem;
+    font-weight: 400;
 }
