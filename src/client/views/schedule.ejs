@@ -13,28 +13,57 @@
 <%      return ISOweekStart; %>
 <% } %>
 
+<% function getWeekOfMonth() { %>
+<%      var d = new Date();%>
+<%      var date = d.getDate();%>
+<%      var day = d.getDay();%>
+<%      return Math.ceil((date - 1 - day) / 7);%>
+<% } %>
+
 
 <div class="tabBoxContainer">
-    <h1 class="scheduleTitle"><%= getDateOfISOWeek(userInfo.schedule[0].weekNumber, userInfo.schedule[0].year).toLocaleDateString('default', {month: 'long'}) %> - <%= userInfo.schedule[0].year %></h1>
-    <div class="tabBar">
-        <ul class="tablist">
-            <!-- depends on the data send in .type = day | week | month, li content change  -->
-            
-            <button class="tab">Monday</button>
-            <button class="tab">Tuesday</button>
-            <button class="tab">Wednesday</button>
-            <button class="tab">Thursday</button>
-            <button class="tab">Friday</button>
-            
-        </ul>
+    <div id="Week" class="calender">
+        <h1 class="scheduleTitle">
+            Week <%= getWeekOfMonth() %> - <%= getDateOfISOWeek(userInfo.schedule[0].weekNumber, userInfo.schedule[0].year).toLocaleDateString('default',
+                {month: 'long' }) %> - <%= userInfo.schedule[0].year %>
+        </h1>
+        <div class="tabBar">
+            <ul class="tablist">
+                <li class="tab">Monday</li>
+                <li class="tab">Tuesday</li>
+                <li class="tab">Wednesday</li>
+                <li class="tab">Thursday</li>
+                <li class="tab">Friday</li>
+            </ul>
+        </div>
+        <div class="scheduleContainer">
+            <%- include('./partials/scheduleBlock.ejs') %>
+        </div>
     </div>
-    <div class="scheduleContainer">
-        <%- include('./partials/scheduleBlock.ejs') %> 
+
+    <div id="Month" class="calender">
+        <h1 class="scheduleTitle">
+            <%= getDateOfISOWeek(userInfo.schedule[0].weekNumber, userInfo.schedule[0].year).toLocaleDateString('default',
+                {month: 'long' }) %> - <%= userInfo.schedule[0].year %>
+        </h1>
+        <div class="tabBar">
+            <ul class="tablist">
+                <li class="tab">Week 1</li>
+                <li class="tab">Week 2</li>
+                <li class="tab">Week 3</li>
+                <li class="tab">Week 4</li>
+            </ul>
+        </div>
+        <div class="scheduleContainer">
+            
+        </div>
     </div>
+    
 </div>
 
 <script type="text/javascript">
     function openPage(pageName, element, color){
+        console.log("clicked")
         var tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         tablinks = document.getElementsByClassName("tab");
@@ -48,12 +77,7 @@
 
         element.style.backgroundColor = color;
     }
-    document.getElementById("defaultopen").click();
 
-    function getDateOfWeek(w, y) {
-        var d = (1 + (w - 1) * 7); // 1st of January + 7 days for each week
-
-    return new Date(y, 0, d);
-}
-
+    const defaultView =  document.getElementsByClassName("SwitchButton")[0] //week view
+    defaultView.click();
 </script>
