@@ -36,7 +36,7 @@ const facultySchema = new mongoose.Schema({
     },
 
     wage: {
-        type: mongoose.Types.Decimal128,
+        type: Number,
         required: [true, 'Must have a wage']
     },
 
