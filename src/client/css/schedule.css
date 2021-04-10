@@ -2,11 +2,16 @@
 
 * {box-sizing: border-box}
 
+.calender{
+    display: none;
+    height: 100%;
+    width: 100%;
+}
 
 .viewSwitchContainer{
     position: absolute;
-    left: 70px;
-    top: 70px;
+    left: 10%;
+    top: 20%;
     
     height: 30px;
     width: 200px;
@@ -35,14 +40,14 @@
 }
 
 
-/* day */
-.SwitchButton:nth-child(1){
+/* Week */
+.SwitchButton:first-child{
     border-top-left-radius: 0.5em;
     border-bottom-left-radius: 0.5em;
 }
 
 /* month */
-.SwitchButton:nth-child(3){
+.SwitchButton:last-child{
     border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
 }
@@ -50,6 +55,7 @@
 .buttonOnFocus{
     background-color: gray;
 }
+
 
 /* TabBox */
 
@@ -59,7 +65,9 @@
     left: 50%;
     transform: translate(-50%,-50%);
     height: 50%;
+    min-height: 400px;
     width: 80%;
+    min-width: 500px;
 }
 
 .tabBar{
@@ -87,7 +95,8 @@
     cursor: pointer;
     font-size: 17px;
 }
-.tab:hover{
+
+#Month .tab:hover{
     background-color: white;
 }
 
