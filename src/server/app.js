@@ -19,6 +19,7 @@ const logger = new Logger();
 //Routes
 const userRoutes = require("./routes/userRoutes");
 const scheduleRoutes = require("./routes/scheduleRoutes");
+const payrollRoutes = require('./routes/payrollRoutes');
 
 const app = express();
 
@@ -68,9 +69,10 @@ app.use(passport.session());
 //Mounting
 app.use(morgan("dev"));
 app.use(express.json());
-//app.use("/api/v1/users", userRoutes);
+
 app.use("/users", userRoutes);
 app.use("/schedule", scheduleRoutes);
+app.use("/payroll", payrollRoutes);
 
 //Set home page to Login Page and render
 // "/" = home
