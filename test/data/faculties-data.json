@@ -9,19 +9,21 @@
         "socialSecurityNumber": 491071328,
         "wage": 52.5,
         "bankAccountNumber": 12690083219,
-        "isDirectDeposit": true
+        "isDirectDeposit": true,
+        "hasAccount": true
     },
     {
         "email": "bruced@gmail.com",
         "firstName": "Dan",
         "lastName": "Bruce",
-        "jobPosition": "Store Manager",
+        "jobPosition": "Baker",
         "phoneNumber": "6174359231",
         "companyName": true,
         "socialSecurityNumber": 491073287,
-        "wage": 50.0,
+        "wage": 15.0,
         "bankAccountNumber": 12690083219,
-        "isDirectDeposit": true
+        "isDirectDeposit": true,
+        "hasAccount": true
     },
     {
         "email": "glassr@gmail.com",
@@ -33,6 +35,20 @@
         "socialSecurityNumber": 491074857,
         "wage": 20.0,
         "bankAccountNumber": 12690083219,
-        "isDirectDeposit": true
+        "isDirectDeposit": true,
+        "hasAccount": true
+    },
+    {
+        "email": "rickg@gmail.com",
+        "firstName": "Rick",
+        "lastName": "Grimes",
+        "jobPosition": "Bagger",
+        "phoneNumber": "6174499978",
+        "companyName": "Whole Foods",
+        "socialSecurityNumber": 491062857,
+        "wage": 20.0,
+        "bankAccountNumber": 12645683219,
+        "isDirectDeposit": true,
+        "hasAccount": false
     }
 ]

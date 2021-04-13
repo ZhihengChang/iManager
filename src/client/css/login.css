@@ -71,10 +71,17 @@ body{
     transition: .5s;
 }
 
-.messageAlert {
+.messageAlertSuccess {
     text-align: center;
     font-weight: 600;
     padding: 30px;
+    color: green;
+}
+.messageAlertError {
+    text-align: center;
+    font-weight: 600;
+    padding: 30px;
+    color: red;
 }
 
 .changePassword {

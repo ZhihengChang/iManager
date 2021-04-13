@@ -1,22 +1,12 @@
 module.exports = {
-    ensureEmployeeAuthenticated: function(req, res, next) {
+    ensureAuthenticated: function(req, res, next) {
         // console.log("auth.js:", req.user);
-        if(req.isAuthenticated() && req.user.isAdmin === false){
+        if(req.isAuthenticated() && req.user){
             next();
         }
         else{
-            req.flash("error_message", "Please Log In as an Employee");
-            res.redirect("/");
-        }
-    },
-    ensureAdminAuthenticated: function(req, res, next) {
-        if(req.isAuthenticated() && req.user.isAdmin === true){
-            next();
-        }
-        else{
-            req.flash("error_message", "Please Log In as an Admin");
+            req.flash("error_message", "Please Log in to View");
             res.redirect("/");
         }
     }
-
 }

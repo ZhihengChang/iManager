@@ -67,7 +67,7 @@
         "username": "bruce!@day",
         "password": "$2a$08$Im38kEehA2BceN8/zGDhR.QCTm9SddXmxWPLHQWgwNqcYDmEFS4J6",
         "email": "bruced@gmail.com",
-        "isAdmin": true,
+        "isAdmin": false,
         "schedule": [{
             "weekNumber": 1,
             "year": 2021,
@@ -134,6 +134,171 @@
         "isAdmin": false,
         "schedule": [{
             "weekNumber": 1,
+            "year": 2021,
+            "weeklyHours": 40,
+            "monday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "tuesday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "wednesday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "thursday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "friday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            }  
+        },
+        {
+            "weekNumber": 2,
+            "year": 2021,
+            "weeklyHours": 40,
+            "monday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "tuesday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "wednesday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "thursday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "friday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            }  
+        },
+        {
+            "weekNumber": 3,
+            "year": 2021,
+            "weeklyHours": 40,
+            "monday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "tuesday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "wednesday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "thursday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            },
+            "friday": {
+                "startTime": {
+                    "hours": 9,
+                    "minutes": 0
+                },
+                "endTime": {
+                    "hours": 17,
+                    "minutes": 0
+                }
+            }  
+        },
+        {
+            "weekNumber": 4,
             "year": 2021,
             "weeklyHours": 40,
             "monday": {

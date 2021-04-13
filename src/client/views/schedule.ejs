@@ -37,7 +37,7 @@
             </ul>
         </div>
         <div class="scheduleContainer">
-            <%- include('./partials/scheduleBlock.ejs') %>
+            <%- include('./partials/weekScheduleBlock.ejs') %>
         </div>
     </div>
 
@@ -47,37 +47,15 @@
                 {month: 'long' }) %> - <%= userInfo.schedule[0].year %>
         </h1>
         <div class="tabBar">
-            <ul class="tablist">
-                <li class="tab">Week 1</li>
-                <li class="tab">Week 2</li>
-                <li class="tab">Week 3</li>
-                <li class="tab">Week 4</li>
+            <ul class="tablist scheduleMonthlyViewFix">
+                <%- include('./partials/monthlyScheduleBlock.ejs')  %> 
             </ul>
-        </div>
-        <div class="scheduleContainer">
-            
         </div>
     </div>
     
 </div>
 
 <script type="text/javascript">
-    function openPage(pageName, element, color){
-        console.log("clicked")
-        var tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        tablinks = document.getElementsByClassName("tab");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        for (var i = 0; i < tablinks.length; i++){
-            tablinks[i].style.backgroundColor = "";
-        }
-        document.getElementById(pageName).style.display = "block";
-
-        element.style.backgroundColor = color;
-    }
-
     const defaultView =  document.getElementsByClassName("SwitchButton")[0] //week view
     defaultView.click();
 </script>

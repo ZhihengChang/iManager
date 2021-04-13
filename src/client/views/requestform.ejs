@@ -1,26 +1,27 @@
 <%- include('./partials/sidebar.ejs') %>
 <%- include('./partials/errorMessages.ejs') %>
-<form id="requestform">
+<% const sendRequestRoute = `/request/create/${userInfo.username}` %>
+<form id="requestform" method="POST" action="<%= sendRequestRoute %>">
     <fieldset>
         <h1>Request Form</h1>
 
-        <h4><%= userInfo.firstName + " " + userInfo.lastName%></h4>
+        <h4><%= userInfo.firstName %> <%= userInfo.lastName%></h4>
         <h5>Username: <%= userInfo.username %></h5>
 
         <label>Type:</label><br/>
-        <select>
-            <option>-Choose One Requeset Type-</option> 
+        <select name="requestType">
+            <option>-Choose One Request Type-</option> 
             <option>Schedule Change</option>
             <option>Request Day-off</option>
             <option>Others</option>
          </select>
         <p>
             <label>Description:</label>
-            <textarea name="description" class="required"></textarea>
+            <textarea name="requestDescription" class="required"></textarea>
         </p>
 
         <button type="submit" class="btn btn-secondary">Submit</button>
-        <button type="submit" class="btn btn-secondary">Cancel</button>
+        <button name="cancel" class="btn btn-secondary" onclick="location.href='/users/dashboard'">Cancel</button>
          
     </fieldset>
 </form>

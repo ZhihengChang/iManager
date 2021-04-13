@@ -55,6 +55,10 @@ const facultySchema = new mongoose.Schema({
     socialSecurityNumber: {
         type: Number,
         required: [true, 'Must have a social security number']
+    },
+    hasAccount: {
+        type: Boolean,
+        default: false
     }
 });
 const faculty = mongoose.model('Faculty', facultySchema);
