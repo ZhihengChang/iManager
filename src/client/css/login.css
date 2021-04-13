@@ -76,3 +76,7 @@ body{
     font-weight: 600;
     padding: 30px;
 }
+
+.changePassword {
+    text-align: center;
+}

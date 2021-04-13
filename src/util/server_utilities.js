@@ -29,3 +29,17 @@ exports.merge = function(objList){
     });
     return obj;
 }
+
+exports.generatePassword = function(length) {
+    var pass = '';
+    var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 
+            'abcdefghijklmnopqrstuvwxyz' +
+            '0123456789@#$';
+      
+    for (i = 1; i <= length; i++) {
+        var char = Math.floor(Math.random()* str.length + 1);  
+        pass += str.charAt(char)
+    }
+      
+    return pass;
+}

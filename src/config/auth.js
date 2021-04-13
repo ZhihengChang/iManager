@@ -1,5 +1,6 @@
 module.exports = {
     ensureEmployeeAuthenticated: function(req, res, next) {
+        // console.log("auth.js:", req.user);
         if(req.isAuthenticated() && req.user.isAdmin === false){
             next();
         }
