@@ -11,11 +11,13 @@ const util = require('../../util/server_utilities');
 const Logger = require("../../util/Logger");
 const DBAPI = require('../../util/DBAPI');
 const catchAsync = require('../../util/error/catchAsync');
+const passport = require('passport');
+const AppError = require('../../util/error/appError');
+const bcrypt = require('bcryptjs');
+const sendEmail = require('../../util/email');
 //Models
 const User = require('../models/userModel');
 const Faculty = require('../models/facultyModel');
-const passport = require('passport');
-const AppError = require('../../util/error/appError');
 
 const logger = new Logger(path.basename(__filename));
 logger.details(true);
@@ -64,17 +66,110 @@ exports.getAllUser = catchAsync(async function (req, res, next) {
 });
 
 /**
- * Create a user based on request body
+ * Create a user and send a notification email to user email
  */
 exports.createUser = catchAsync(async function (req, res, next) {
     logger.log("create user").msg();
+    
+    //check user already exist
+    let employee_id = req.params.employeeid;
+    const employee = await Faculty.findById(employee_id);
+    if(!employee){
+        return next(
+            new AppError(
+                'Employee Not Found!',
+                404
+            )
+        );
+    }
+    const user = await User.findOne({ email: employee.email });
+    if(user){
+        return next(
+            new AppError(
+                'User account already exist!',
+                400
+            )
+        );
+    }
 
-    const newUser = await User.create(req.body);
-    util.sendResponse(res, 201, {
-        status: 'success',
-        data: { user: newUser }
+    //set up credentials username, email, password
+    let username = `${employee.lastName + employee.firstName.charAt(0)}`.toLowerCase();
+    
+    let salt = await bcrypt.genSalt(10)
+    let password = util.generatePassword(25);
+    // console.log("password:", password);
+    let hashed = await bcrypt.hash(password, salt);
+
+    const newUser = await User.create({
+        username,
+        email: employee.email,
+        password: hashed,
     });
+
+    //send token to user's email
+    const distURL = `${req.protocol}://${req.get('host')}`;
+    const message = 
+        `Hello ${employee.firstName}, \n` + 
+        `An iManager user account has been created on your behalf by your manager. \n` +
+        `You can login using below username and one-time password at ${distURL}: \n\n` +
+        `\t username: ${username} \n` +
+        `\t password: ${password} \n\n` +
+        `If you have trouble logging in, please contact your manager for more information.`;
+
+    try {
+        await sendEmail({
+            email: employee.email,
+            subject: 'iManager User Account',
+            message,
+        });
+
+        util.sendResponse(res, 200, {
+            status: 'sucess',
+            message: 'Email sent to employee!',
+        });
+
+    } catch (err) {
+        console.log(err);
+        return next(
+            new AppError(
+                'There was an error sending the email, please try again later.',
+                500
+            )
+        );
+    }
 });
+
+exports.changePassword = catchAsync(async function (req, res, next) {
+
+    const username = req.params.username
+    const password = req.body.password;
+    const passwordConfirm = req.body.passwordConfirm;
+
+    if(password != passwordConfirm){
+        return next(
+            new AppError(
+                'Password and password confirm does not match!',
+                400
+            )
+        );
+    }
+
+    const salt = await bcrypt.genSalt(10)
+    const hashed = await bcrypt.hash(password, salt);
+
+    const user = await User.findOne({ username });
+    if(!user){
+        return next(new AppError(`No user found!`, 404));
+    }
+
+    user.password = hashed;
+    await user.save();
+
+    req.flash("success_message", "Password Changed");
+    
+    const dashboardRoute = `/users/dashboard/${user.username}`;
+    res.redirect(dashboardRoute);
+})
 
 /**
  * Delete a specific user by object id
@@ -150,10 +245,20 @@ exports.updateUserProfile = catchAsync(async function (req, res, next) {
 exports.validateUser = function (req, res) {
     logger.log(`validate user "${req.body.username}"`).msg();
 
-    passport.authenticate('local', {
-        successRedirect: `/users/dashboard/${req.body.username}`,
-        failureRedirect: "/",
-        failureFlash: true
+    passport.authenticate('local', (err, user, info) => {
+        if(err) next(err);
+        if(!user) {
+            return res.redirect("/");
+        }
+        req.logIn(user, async function(err){
+            if(err) return next(err);
+            if(user.lastLogin.getTime() == new Date(0).getTime()) {
+                user.lastLogin = new Date();
+                await user.save();
+                return res.redirect(`/users/firstTimeLogin/${req.body.username}`);
+            }
+            return res.redirect(`/users/dashboard/${req.body.username}`);
+        })
     })(req, res);
 }
 
@@ -244,5 +349,12 @@ exports.renderUserProfile = catchAsync(async function (req, res, next) {
 
     res.render("profile", {
         userInfo
+    });
+});
+
+exports.renderChangePassword = catchAsync(async function (req, res, next) {
+    const user = await User.findOne({ username: req.params.username }).lean();
+    res.render("changePassword", {
+        userInfo: user
     });
 });

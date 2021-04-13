@@ -22,10 +22,10 @@ module.exports = function (passport) {
                             });
                         }
                         //If here then the user was found, now we try to match passwords
-                        bcrypt.compare(password, user.password, (err, isMatch) => {
+                        bcrypt.compare(password, user.password, async (err, isMatch) => {
                             if (err) throw err;
                             if (isMatch) {
-                                return done(null, user);
+                                return done(null, user);  
                             }
                             else {
                                 return done(null, false, {

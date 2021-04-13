@@ -7,8 +7,17 @@ const userController = require("../controllers/userController");
 const router = express.Router();
 
 //Routes
+router.route(routes.userCreate)
+    .get(userController.createUser);
+
 router.route(routes.userLogin)
     .post(userController.validateUser);
+
+router.route(`/firstTimeLogin/:username`)
+    .get(userController.renderChangePassword);
+
+router.route(`/changePassword/:username`)
+    .post(userController.changePassword);
 
 router.route(routes.userLogout)
     .get(ensureEmployeeAuthenticated, userController.logOutUser);
