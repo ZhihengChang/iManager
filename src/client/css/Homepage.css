@@ -11,10 +11,9 @@ body{
 }
 
 .welcome{
-    position: absolute;
-    left: 120px;
+    padding-left: 120px;
     font-size: 30px;
-    padding: 12px 10px;
+    padding: 12px 10px 12px 170px;
 }
 
 .sidenav{
@@ -109,3 +108,27 @@ body{
 .toggle.active:before{
     content: '\f00d';
 }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+    /* padding-left: 120px; */
+    margin: 30px auto 0px auto;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  .userTableHeader{
+      background: black;
+      color: white;
+  }
+  
+  .userTableRow:hover {
+    background-color: white;
+    color: pink;
+  }

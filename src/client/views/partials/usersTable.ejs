@@ -1,0 +1,23 @@
+<table>
+    <tr class="userTableHeader">
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Position</th>
+      <th>Email</th>
+      <th>Account Create</th>
+    </tr>
+    <% faculty.forEach(element => { %>
+        <tr class="userTableRow">
+          <td><%= element.firstName %></td>
+          <td><%= element.lastName %></td>
+          <td><%= element.jobPosition %></td>
+          <td><%= element.email %></td>
+          <% if (element.hasAccount === true) { %>
+              <td><button disabled class="createAccBtn" href="#">Create User Account</button></td>
+          <% } else{ %>
+            <% let createAccRoute = `/users/create/${element._id}` %>
+              <td><button class="createAccBtn" href="<%= createAccRoute %>">Create User Account</button></td>
+          <% } %>
+        </tr>
+    <% }) %>
+</table>

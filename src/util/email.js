@@ -24,3 +24,4 @@ const sendEmail = async function(options){
 };
 
 module.exports = sendEmail;
+

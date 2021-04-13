@@ -1,0 +1,33 @@
+
+<% const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'] %> 
+
+<% userInfo.schedule.map((elem, i) => { %>
+    <li class="tab">Week <%= elem.weekNumber %></li>
+            <div class="tabBar">
+                <ul class="tablist scheduleMonthlyViewWeekFix">
+                    <li class="tab">Monday</li>
+                    <li class="tab">Tuesday</li>
+                    <li class="tab">Wednesday</li>
+                    <li class="tab">Thursday</li>
+                    <li class="tab">Friday</li>
+                </ul>
+            </div>
+            <div class="scheduleContainer scheduleMonthlyViewTileFix">
+                <% for(let i = 0; i < days.length; i++ ) { %>
+                    <div id="<%= days[i] %>" class="tabcontent">
+                        <div class="timeBlock">
+                            <% let dayName = days[i] %>
+                            <% let startTime = elem[dayName].startTime.hours %>
+                            <% let endTime = elem[dayName].endTime.hours %>
+                
+                            <h1 class="important_text"><%= userInfo.firstName %> <%= userInfo.lastName %></h1>
+                            <br/>
+                            <h1><%= userInfo.position %></h1>
+                            <br/>
+                            <h1 class="important_text"><%= startTime %>am - <%= endTime - 12 %>pm</h1>
+                            
+                        </div>
+                    </div>
+                <% } %>
+        </div>
+<% }); %>

@@ -129,6 +129,7 @@
     display: flex;
     justify-content: space-around;
     height: 100%;
+    width: 100%;
 }
 
 .scheduleBlock{
@@ -163,4 +164,15 @@
     margin: 15px 0px;
     font-size: 2rem;
     font-weight: 400;
+}
+
+.scheduleMonthlyViewFix {
+    flex-direction: column;
+}
+.scheduleMonthlyViewWeekFix {
+    flex-direction: row;
+}
+
+.scheduleMonthlyViewTileFix {
+    height: 350px;
 }

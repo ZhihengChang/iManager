@@ -1,2 +1,9 @@
 <%- include('./partials/sidebar.ejs') %>
-<p class="welcome">Welcome, <%= userInfo.username %>!</p>
+<% if(typeof faculty != 'undefined'){ %>
+    <%- include('./partials/errorMessages.ejs') %> 
+    <p class="welcome">Welcome, ADMIN <%= userInfo.username %>!</p>
+    <%- include('./partials/usersTable.ejs') %> 
+<% } else { %>
+    <%- include('./partials/errorMessages.ejs') %> 
+    <p class="welcome">Welcome, USER <%= userInfo.username %>!</p>
+<% } %>

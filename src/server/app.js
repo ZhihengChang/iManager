@@ -20,6 +20,7 @@ const logger = new Logger();
 const userRoutes = require("./routes/userRoutes");
 const scheduleRoutes = require("./routes/scheduleRoutes");
 const payrollRoutes = require('./routes/payrollRoutes');
+const requestRoutes = require('./routes/requestRoutes');
 
 const app = express();
 
@@ -73,6 +74,7 @@ app.use(express.json());
 app.use("/users", userRoutes);
 app.use("/schedule", scheduleRoutes);
 app.use("/payroll", payrollRoutes);
+app.use("/request", requestRoutes);
 
 //Set home page to Login Page and render
 // "/" = home

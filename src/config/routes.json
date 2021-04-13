@@ -22,15 +22,16 @@
     "schedule": {
         "base": "/schedule",
         "scheduleView": "/:username",
-        "ScheduleCreation": "/create",
+        "ScheduleCreate": "/create",
         "allSchedules": "/"
     },
 
     "request": {
         "base": "/requests",
         "requestRoot": "/",
-        "RequestCreation": "/create",
-        "RequestHandling": "/handle"
+        "requestView": "/:username",
+        "requestCreate": "/create/:username",
+        "requestHandling": "/handle"
     },
 
     "payroll": {

@@ -100,11 +100,15 @@ exports.createUser = catchAsync(async function (req, res, next) {
     // console.log("password:", password);
     let hashed = await bcrypt.hash(password, salt);
 
-    const newUser = await User.create({
+    await User.create({
         username,
         email: employee.email,
         password: hashed,
     });
+
+    employee.hasAccount = true;
+
+    await employee.save();
 
     //send token to user's email
     const distURL = `${req.protocol}://${req.get('host')}`;
@@ -122,6 +126,8 @@ exports.createUser = catchAsync(async function (req, res, next) {
             subject: 'iManager User Account',
             message,
         });
+
+        // req.flash("success_message", "Email sent to the User");
 
         util.sendResponse(res, 200, {
             status: 'sucess',
@@ -144,27 +150,25 @@ exports.changePassword = catchAsync(async function (req, res, next) {
     const username = req.params.username
     const password = req.body.password;
     const passwordConfirm = req.body.passwordConfirm;
-
+    
     if(password != passwordConfirm){
-        return next(
-            new AppError(
-                'Password and password confirm does not match!',
-                400
-            )
-        );
+        
+        req.flash("error_message", "Passwords do not match!");
+        res.redirect(`/users/firstTImeLogin/${req.params.username}`)
+        return next()
+        
     }
-
-    const salt = await bcrypt.genSalt(10)
-    const hashed = await bcrypt.hash(password, salt);
-
-    const user = await User.findOne({ username });
-    if(!user){
-        return next(new AppError(`No user found!`, 404));
-    }
-
-    user.password = hashed;
-    await user.save();
-
+        const salt = await bcrypt.genSalt(10)
+        const hashed = await bcrypt.hash(password, salt);
+        
+        const user = await User.findOne({ username });
+        if(!user){
+            return next(new AppError(`No user found!`, 404));
+        }
+        
+        user.password = hashed;
+        await user.save();
+        
     req.flash("success_message", "Password Changed");
     
     const dashboardRoute = `/users/dashboard/${user.username}`;
@@ -248,6 +252,7 @@ exports.validateUser = function (req, res) {
     passport.authenticate('local', (err, user, info) => {
         if(err) next(err);
         if(!user) {
+            req.flash("error_message", "The username or password is incorrect");
             return res.redirect("/");
         }
         req.logIn(user, async function(err){
@@ -279,9 +284,18 @@ exports.logOutUser = function (req, res){
  */
 exports.renderUserDashboard = catchAsync(async function (req, res, next) {
     const user = await User.findOne({ username: req.params.username }).lean();
-    res.render("dashboard", {
-        userInfo: user
-    });
+    if(user.isAdmin === true){
+        const allFaculty = await Faculty.find({}).lean();
+        res.render("dashboard", {
+            userInfo: user,
+            faculty: allFaculty
+        });
+    }
+    else{
+        res.render("dashboard", {
+            userInfo: user
+        });
+    }
 });
 
 /**
