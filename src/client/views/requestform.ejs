@@ -2,7 +2,7 @@
 <%- include('./partials/errorMessages.ejs') %>
 
 <% if(!userInfo.isAdmin) { %>
-    <% const sendRequestRoute = `/request/create/${userInfo.username}` %>
+    <% const sendRequestRoute = `/requests/create/${userInfo.username}` %>
     <form id="requestform" method="POST" action="<%= sendRequestRoute %>">
         <fieldset>
             <h1>Request Form</h1>
@@ -28,8 +28,11 @@
             </p>
     
             <button type="submit" class="btn btn-secondary">Submit</button>
-            <button name="cancel" class="btn btn-secondary" onclick="location.href='/users/dashboard'">Cancel</button>
+            <% const onCancel = `/users/dashboard/${userInfo.username}` %>
+            <a name="cancel" class="btn btn-secondary" href='<%= onCancel %>'>Cancel</a>
              
         </fieldset>
     </form>
+<% } else {%>
+    <%- include('./partials/requests.ejs') %> 
 <% } %>

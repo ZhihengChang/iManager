@@ -32,3 +32,39 @@ form button{
 .error{
     background-color: red;
 }
+
+.requestContainer {
+    margin: 0px auto 50px auto;
+    border: 1px solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    width: 35%;
+    text-align: center;
+}
+
+.importantText{
+    font-weight: bold;
+}
+
+.approveBtn,
+.declineBtn{
+  font-weight: 150;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 6px 25px;
+}
+
+.approveBtn{
+  color: white;
+  background-color: rgb(78, 211, 78);
+}
+
+.declineBtn{
+  color: white;
+  background-color: red;
+}
+.userTable-action {
+    text-align: center;
+}

@@ -18,6 +18,7 @@ const sendEmail = require('../../util/email');
 //Models
 const User = require('../models/userModel');
 const Faculty = require('../models/facultyModel');
+const Request = require('../models/requestModel');
 
 const logger = new Logger(path.basename(__filename));
 logger.details(true);
@@ -292,8 +293,12 @@ exports.renderUserDashboard = catchAsync(async function (req, res, next) {
         });
     }
     else{
+
+        let requests = await Request.find({ username: user.username });
+
         res.render("dashboard", {
-            userInfo: user
+            userInfo: user,
+            requests
         });
     }
 });
@@ -371,4 +376,27 @@ exports.renderChangePassword = catchAsync(async function (req, res, next) {
     res.render("changePassword", {
         userInfo: user
     });
+});
+
+exports.renderInsertNewEmployee = catchAsync(async function (req, res, next) {
+    const user = await User.findOne({ username: req.params.admin }).lean();
+    res.render("InsertNewEmployee", {
+        userInfo: user
+    });
+});
+
+exports.insertNewEmployee = catchAsync(async function (req, res, next) {
+    console.log(req.body)
+    console.log(req.params)
+    const employee = await Faculty.findOne({ email: req.body.email});
+
+    if(employee){
+        req.flash("error_message", "Employee already exists!");
+        res.redirect(`/users/dashboard/${req.params.admin}`)
+    }
+
+    await Faculty.create(req.body);
+
+    req.flash("success_message", "Employee Created!");
+    res.redirect(`/users/dashboard/${req.params.admin}`)
 });

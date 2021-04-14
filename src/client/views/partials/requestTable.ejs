@@ -1,23 +1,26 @@
-<table>
-    <tr class="requestTableHeader">
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Position</th>
-      <th>Email</th>
-      <th>Action</th>
-    </tr>
-    <% user.forEach(element => { %>
-        <tr class="requestTableRow">
-          <td><%= element.firstName %></td>
-          <td><%= element.lastName %></td>
-          <td><%= element.jobPosition %></td>
-          <td><%= element.email %></td>
-          <% if (element.hasAccount === true) { %>
-              <td class="userTable-action"><a class="disabledBtn" href="#">Create User Account</a></td>
-          <% } else{ %>
-            <% let createAccRoute = `/users/create/${element._id}/${userInfo.username}` %>
-              <td class="userTable-action"><a class="activeBtn" href="<%= createAccRoute %>">Create User Account</a></td>
-          <% } %>
+<%if(requests.length != 0){%>
+    <table>
+        <tr class="userTableHeader">
+          <th>Request Type</th> 
+          <th>Target Date</th> 
+          <th>Reason</th>
+          <th>Date Created</th>
+          <th>Status</th>
         </tr>
-    <% }) %>
-</table>
+        <% requests.forEach(element => { %>
+            <tr class="userTableRow">
+              <td class="userTable-action"><%= element.requestType %></td>
+              <td><%= (element.targetDate).toLocaleDateString(); %></td>
+              <td><%= element.requestDescription %></td>
+              <td><%= (element.dateCreated).toLocaleDateString(); %></td>
+              <% if (element.status === "Approve") { %>
+                <td class="approvedColor userTable-action"><%= element.status %></td>
+              <% } else if(element.status === "Decline"){ %>
+                <td class="declinedColor userTable-action"><%= element.status %></td>
+              <% } else { %>
+                <td class="actionNeededColor userTable-action"><%= element.status %></td>
+              <% } %>
+            </tr>
+        <% }) %>
+    </table>
+<% } %>

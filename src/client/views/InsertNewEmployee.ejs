@@ -1,0 +1,18 @@
+<div id="sc-edprofile">
+    <h1>Insert New Employee</h1>
+    <div class="sc-container">
+      <% const insertNewEmployeeRoute = `/users/${userInfo.username}/insertEmployee` %>
+      <form action=<%= insertNewEmployeeRoute %> method="post">
+        <input name="firstName" type="text" placeholder="First Name" />
+        <input name="lastName" type="text" placeholder="Last Name" />
+        <input name="email" type="email" placeholder="Email" />
+        <input name="phoneNumber" type="text" placeholder="Phone Number" />
+        <input name="companyName" type="text" placeholder="Company Name" value="Whole Foods" readonly/>
+        <input name="jobPosition" type="text" placeholder="Position" />
+        <input name="wage" type="text" placeholder="Wage" />
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+      <% const onCancel = `location.href='/users/dashboard/${userInfo.username}';` %>
+      <button name="cancel" class="btn btn-secondary" onclick=<%= onCancel %>>Cancel</button>
+    </div>
+</div>

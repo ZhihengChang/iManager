@@ -17,7 +17,7 @@
         
         <button type="submit" class="btn btn-secondary">Submit</button>
       </form>
-      <% const profileRoute = `/users/profile/${userInfo.username}` %>
-      <button name="cancel" class="btn btn-secondary" onclick="location.href='/'">Cancel</button>
+      <% const onCancel = `location.href='/users/profile/${userInfo.username}';` %>
+      <button name="cancel" class="btn btn-secondary" onclick=<%= onCancel %>>Cancel</button>
     </div>
   </div>

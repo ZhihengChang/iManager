@@ -118,7 +118,7 @@ table {
   }
   
   td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #333;
     text-align: left;
     padding: 8px;
   }
@@ -157,4 +157,26 @@ table {
     color: white;
     pointer-events: none;
     background-color: gray;
+  }
+
+  .approvedColor{
+      color: rgb(45, 191, 45);
+      font-weight: 600;
+  }
+  
+  .declinedColor {
+    color: red;
+    font-weight: 600;
+  }
+
+  .actionNeededColor {
+      color: grey;
+      font-weight: 600;
+  }
+
+  .btnRatioFix{
+    display: block;
+    margin: 0 158px 0px auto;
+    width: 50px;
+    float: right;
   }

@@ -14,6 +14,7 @@
         "userProfileEdit": "/profile/:username/edit",
         "userProfileUpdate": "/:userid/:employeeid",
         "userCreate": "/create/:employeeid/:admin",
+        "adminEmployeeInsert": "/insert/:admin",
         "userLogin": "/login",
         "userLogout": "/logout",
         "userDashboard": "/dashboard/:username"
@@ -31,7 +32,8 @@
         "requestRoot": "/",
         "requestView": "/:username",
         "requestCreate": "/create/:username",
-        "requestHandling": "/handle"
+        "requestHandleApprove": "/approve/:requestId/:admin",
+        "requestHandleDecline": "/decline/:requestId/:admin"
     },
 
     "payroll": {

@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 const requestSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true
+    },
+
     fullName: {
         type: String,
         required: [true, 'Must have a name']
@@ -24,6 +29,10 @@ const requestSchema = new mongoose.Schema({
     requestDescription: {
         type: String,
         //required: [false, 'Description not required']
+    },
+    status: {
+        type: String,
+        default: "Action Required"
     }
 });
 const Request = mongoose.model('Request', requestSchema);

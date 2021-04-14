@@ -1,0 +1,39 @@
+<div>
+    <% let requestCounter = 0; %>
+    <% requests.forEach((request, index) => { %>
+        <% if (request.status === "Action Required") { %>
+            <% requestCounter++; %>
+            <p class="welcome">Request #<%= index + 1 %></p>
+            <table class="requestContainer">
+                <tr>
+                    <td>From:</td>
+                    <td class="importantText"><%= request.fullName %></td>
+                </tr>
+                <tr>
+                    <td>Request Type:</td>
+                    <td class="importantText"><%= request.requestType %></td>
+                </tr>
+                <tr>
+                    <td>Target Date:</td>
+                    <td class="importantText"><%= (request.targetDate).toLocaleDateString(); %></td>
+                </tr>
+                <tr>
+                    <td>Reason:</td>
+                    <td class="importantText"><%= request.requestDescription %></td>
+                </tr>
+                <tr>
+                    <td>Date Created:</td>
+                    <td class="importantText"><%= (request.dateCreated).toLocaleDateString(); %></td>
+                </tr>
+                <tr>
+                    <% let takeActionRoute = `${request._id}/${userInfo.username}`%>
+                    <td class="userTable-action"><a class="approveBtn" href="/requests/approve/<%= takeActionRoute %>">Approve</a></td>
+                    <td class="userTable-action"><a class="declineBtn" href="/requests/decline/<%= takeActionRoute %>">Decline</a></td>
+                </tr>
+            </table>
+        <% } %>
+    <% }) %>
+    <% if (requestCounter == 0) { %>
+            <p class="welcome">No New Requests...</p>
+    <% } %>
+</div>

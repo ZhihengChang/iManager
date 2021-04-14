@@ -6,7 +6,7 @@ const Request = require('../models/requestModel');
 const util = require('../../util/server_utilities');
 
 // renders the request page for user
-exports.renderRequest = catchAsync(async function(req, res, next) {
+exports.renderViewRequest = catchAsync(async function(req, res, next) {
 
     const user = await User.findOne({ username: req.params.username }).lean();
     const employeeUser = await Faculty.findOne({ email: user.email }).lean();
@@ -24,14 +24,19 @@ exports.renderRequest = catchAsync(async function(req, res, next) {
         position:       employeeUser.jobPosition
     }
 
-    res.render('requestform', {
-        userInfo
-    });
-});
+    if(user.isAdmin == true){
+        const allRequests = await Request.find({}).lean();
 
-exports.renderViewRequest = catchAsync(async function(req, res, next) {
-    // const allRequest = await Request.find({});
-
+        res.render('requestform', {
+            userInfo,
+            requests: allRequests
+        });
+    }
+    else{
+        res.render('requestform', {
+            userInfo
+        });
+    }
 });
 
 exports.sendRequest = catchAsync(async function(req, res) {
@@ -51,10 +56,50 @@ exports.sendRequest = catchAsync(async function(req, res) {
         );
     }
 
-    user.request.push(newRequest._id);
-    await user.save();
-
     req.flash("success_message", "Request sent!");
-    res.redirect(`/request/${username}`);
+    res.redirect(`/requests/${username}`);
+
+});
+
+exports.approveRequest = catchAsync(async function(req, res) {
+
+    const request = await Request.findById( req.params.requestId );
+
+    if(!request){
+        return next(
+            new AppError(
+                `No Request found with requestID ${req.params.requestId}`,
+                404
+            )
+        );
+    }
+
+    request.status = "Approve";
+
+    await request.save();
+
+    res.redirect(`/requests/${req.params.admin}`);    
+
+});
+
+
+exports.declineRequest = catchAsync(async function(req, res) {
+
+    const request = await Request.findById( req.params.requestId );
+
+    if(!request){
+        return next(
+            new AppError(
+                `No Request found with requestID ${req.params.requestId}`,
+                404
+            )
+        );
+    }
+
+    request.status = "Decline";
+
+    await request.save();
+
+    res.redirect(`/requests/${req.params.admin}`);    
 
 });

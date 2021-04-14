@@ -4,7 +4,8 @@
       <th>Last Name</th>
       <th>Position</th>
       <th>Email</th>
-      <th>Action</th>
+      <% let renderInsertPage = `/users/insert/${userInfo.username}` %>
+      <th>Action <a class="activeBtn" href=<%= renderInsertPage %>>+</a></th>
     </tr>
     <% faculty.forEach(element => { %>
         <tr class="userTableRow">

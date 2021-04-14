@@ -74,7 +74,7 @@ app.use(express.json());
 app.use("/users", userRoutes);
 app.use("/schedule", scheduleRoutes);
 app.use("/payroll", payrollRoutes);
-app.use("/request", requestRoutes);
+app.use("/requests", requestRoutes);
 
 //Set home page to Login Page and render
 // "/" = home
