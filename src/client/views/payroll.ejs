@@ -1,0 +1,21 @@
+<%- include('./partials/sidebar.ejs') %>
+<%- include('./partials/errorMessages.ejs') %>
+<div class="wrapper" style="height: inherit; top: 40%;">
+    <div class="left">
+        <img src="/views/img/user_img.png" alt="user" width="100"/>
+        <h4><%= userInfo.firstName + " " + userInfo.lastName%></h4>
+        <h5><%= userInfo.companyName%></h5>
+        <p><%= userInfo.jobPosition %></p>
+    </div>
+    <div class="right">
+        <div class="info">
+            <% userInfo.payroll.forEach(payPeriod => { %>
+                <div class="singleWeekPayContainer">
+                    <p class="payrollText">Week <%= payPeriod.weekNumber %> - <%= payPeriod.year %></p>
+                    <p class="payrollText">Total Hours Worked: <%= payPeriod.totalHours %>hrs</p>
+                    <p class="payrollText">This Weeks Pay: <span class="approvedColor">$<%= payPeriod.totalIncome %></span></p>
+                </div>
+            <% });  %> 
+        </div>
+    </div>
+</div>

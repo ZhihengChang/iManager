@@ -1,0 +1,9 @@
+.singleWeekPayContainer {
+    margin: 15px auto;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+.payrollText{
+    margin: 5px;
+}
