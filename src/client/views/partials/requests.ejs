@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                     <% let takeActionRoute = `${request._id}/${userInfo.username}`%>
-                    <td class="userTable-action"><a class="approveBtn" href="/requests/approve/<%= takeActionRoute %>">Approve</a></td>
+                    <td class="userTable-action-approve"><a class="approveBtn" href="/requests/approve/<%= takeActionRoute %>">Approve</a></td>
                     <td class="userTable-action"><a class="declineBtn" href="/requests/decline/<%= takeActionRoute %>">Decline</a></td>
                 </tr>
             </table>

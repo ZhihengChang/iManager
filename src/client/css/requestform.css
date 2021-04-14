@@ -10,7 +10,7 @@ fieldset {
     margin: auto auto;
     background-color: #FAFCFF;
     width: 300px;
-
+    border-radius: 32px;
  }
 
  form p {
@@ -19,20 +19,28 @@ fieldset {
  }
 
 form button{
-    width: 100%;
+    
+    width: 30%;
     padding: 12px 10px;
     text-align: center;
     border: none;
     font-size: 20px;
+    margin-top: 10px;
     margin-bottom: 5px;
     border-radius: 30px;
     background-color: pink;
     color: black;
     transition: .5s;
 }
-.error{
-    background-color: red;
+
+#requestform a {
+    display: block;
 }
+
+td {
+    text-align: center;
+}
+
 
 .requestContainer {
     margin: 0px auto 50px auto;

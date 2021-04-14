@@ -33,11 +33,11 @@
                      </p> 
                       <p>
                       <label>Description</label><br/>
-                         <textarea name="description" rows="5" cols="61" class="required"></textarea>
+                        <textarea name="requestDescription" rows="5" cols="61" class="required"></textarea>
                       </p>
                    <button type="submit" class="btn btn-secondary">Submit</button>
-                   <% const onCancel = `localtion.href='/users/profile/${userInfo.username}';` %>
-                  <button name="cancel" class="btn btn-secondary" onclick=<%= onCancel %>>Cancel</button>
+                   <% const onCancel = `/users/dashboard/${userInfo.username}` %>
+                   <a href="<%= onCancel %>">cancel</a>
                    </td>
                 </tr>
             </table>
