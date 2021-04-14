@@ -49,12 +49,12 @@ const facultySchema = new mongoose.Schema({
     isDirectDeposit: {
         type: Boolean,
         default: false,
-        required: [true, 'Must declare direct deposit status']
+        required: [false, 'Must declare direct deposit status']
     },
 
     socialSecurityNumber: {
         type: Number,
-        required: [true, 'Must have a social security number']
+        required: [false, 'Must have a social security number']
     },
     hasAccount: {
         type: Boolean,

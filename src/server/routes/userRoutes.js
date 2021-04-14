@@ -7,6 +7,12 @@ const userController = require("../controllers/userController");
 const router = express.Router();
 
 //Routes
+router.route("/insert/:admin")
+    .get(ensureAuthenticated, userController.renderInsertNewEmployee);
+
+router.route("/:admin/insertEmployee")
+    .post(ensureAuthenticated, userController.insertNewEmployee);
+    
 router.route(routes.userCreate)
     .get(ensureAuthenticated, userController.createUser);
 
@@ -42,5 +48,6 @@ router.route(routes.userDashboard)
 
 router.route(routes.userProfileEdit)
     .get(ensureAuthenticated, userController.renderEditProfile);
+
 
 module.exports = router;
