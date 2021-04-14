@@ -6,30 +6,41 @@
     <form id="requestform" method="POST" action="<%= sendRequestRoute %>">
         <fieldset>
             <h1>Request Form</h1>
-            
-            <label>username:</label>
-            <input type="text" name="username" value="<%= userInfo.username %>" readonly />
-            <br/>
-            <label>name:</label>
-            <input type="text" name="fullName" value="<%= userInfo.firstName %> <%= userInfo.lastName%>" readonly />
-            <br/>
-            <label>Type:</label><br/>
-            <select name="requestType">
-                <option value="none">-Choose One Request Type-</option> 
-                <option value="Schedule Change">Schedule Change</option>
-                <option value="Request Day-off">Request Day-off</option>
-                <option>Others</option>
-            </select><br/>
-            <label>Target Date:</label><br/>
-            <input type="date" name="targetDate" value="2021-04-13">
-            <p>
-                <label>Description:</label>
-                <textarea name="requestDescription" class="required"></textarea>
-            </p>
-    
-            <button type="submit" class="btn btn-secondary">Submit</button>
-            <% const onCancel = `/users/dashboard/${userInfo.username}` %>
-            <a name="cancel" class="btn btn-secondary" href='<%= onCancel %>'>Cancel</a>
+            <table>
+                <tr>
+                   <td colspan="2">
+                      <p>
+                         <label>Username</label>
+                         <input type="text" name="username" value="<%= userInfo.username %>" readonly /><br/>
+                      </p>
+                     <p>
+                       <label>Name</label>
+                   <input type="text" name="fullName" value="<%= userInfo.firstName %> <%= userInfo.lastName%>" readonly /><br/>
+                     </p>
+                     <p>
+                       <label>Type:</label><br/>
+                           <select name="requestType">
+                           <option value="none">-Choose One Request Type-</option> 
+                           <option value="Schedule Change">Schedule Change</option>
+                           <option value="Request Day-off">Request Day-off</option>
+                           <option>Others</option>
+                   </select><br/>
+                   </p>
+                   <p>
+                       <label>Target Date:</label><br/>
+                       <input type="date" name="targetDate" value="2021-04-13">
+                   </p>
+                     </p> 
+                      <p>
+                      <label>Description</label><br/>
+                         <textarea name="description" rows="5" cols="61" class="required"></textarea>
+                      </p>
+                   <button type="submit" class="btn btn-secondary">Submit</button>
+                   <% const onCancel = `localtion.href='/users/profile/${userInfo.username}';` %>
+                  <button name="cancel" class="btn btn-secondary" onclick=<%= onCancel %>>Cancel</button>
+                   </td>
+                </tr>
+            </table>
              
         </fieldset>
     </form>

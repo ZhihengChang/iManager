@@ -2,19 +2,20 @@
     font-family: "Lato", sans-serif;
 }
 
-/* h1, h4, h5 {
+h1{
     text-align: center;
-} */
+}
 
 fieldset {
-    margin: 1em auto;
+    margin: auto auto;
     background-color: #FAFCFF;
-    width: 60%;
+    width: 300px;
+
  }
 
  form p {
      text-align: center;
-    margin-top: 0.5em;
+     margin-top: 0.5em;
  }
 
 form button{
