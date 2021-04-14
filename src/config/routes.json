@@ -13,7 +13,7 @@
         "userProfile": "/profile/:username",
         "userProfileEdit": "/profile/:username/edit",
         "userProfileUpdate": "/:userid/:employeeid",
-        "userCreate": "/create/:employeeid",
+        "userCreate": "/create/:employeeid/:admin",
         "userLogin": "/login",
         "userLogout": "/logout",
         "userDashboard": "/dashboard/:username"

@@ -37,7 +37,10 @@ const userSchema = new mongoose.Schema({
         required: [true, 'A user account must have a last login time']
     },
 
-    request: [requestSchema]
+    request: {
+        type: [String],
+        default: []
+    }
 
 });
 const User = mongoose.model('User', userSchema);

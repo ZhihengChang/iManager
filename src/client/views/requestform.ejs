@@ -1,27 +1,35 @@
 <%- include('./partials/sidebar.ejs') %>
 <%- include('./partials/errorMessages.ejs') %>
-<% const sendRequestRoute = `/request/create/${userInfo.username}` %>
-<form id="requestform" method="POST" action="<%= sendRequestRoute %>">
-    <fieldset>
-        <h1>Request Form</h1>
 
-        <h4><%= userInfo.firstName %> <%= userInfo.lastName%></h4>
-        <h5>Username: <%= userInfo.username %></h5>
-
-        <label>Type:</label><br/>
-        <select name="requestType">
-            <option>-Choose One Request Type-</option> 
-            <option>Schedule Change</option>
-            <option>Request Day-off</option>
-            <option>Others</option>
-         </select>
-        <p>
-            <label>Description:</label>
-            <textarea name="requestDescription" class="required"></textarea>
-        </p>
-
-        <button type="submit" class="btn btn-secondary">Submit</button>
-        <button name="cancel" class="btn btn-secondary" onclick="location.href='/users/dashboard'">Cancel</button>
-         
-    </fieldset>
-</form>
+<% if(!userInfo.isAdmin) { %>
+    <% const sendRequestRoute = `/request/create/${userInfo.username}` %>
+    <form id="requestform" method="POST" action="<%= sendRequestRoute %>">
+        <fieldset>
+            <h1>Request Form</h1>
+            
+            <label>username:</label>
+            <input type="text" name="username" value="<%= userInfo.username %>" readonly />
+            <br/>
+            <label>name:</label>
+            <input type="text" name="fullName" value="<%= userInfo.firstName %> <%= userInfo.lastName%>" readonly />
+            <br/>
+            <label>Type:</label><br/>
+            <select name="requestType">
+                <option value="none">-Choose One Request Type-</option> 
+                <option value="Schedule Change">Schedule Change</option>
+                <option value="Request Day-off">Request Day-off</option>
+                <option>Others</option>
+            </select><br/>
+            <label>Target Date:</label><br/>
+            <input type="date" name="targetDate" value="2021-04-13">
+            <p>
+                <label>Description:</label>
+                <textarea name="requestDescription" class="required"></textarea>
+            </p>
+    
+            <button type="submit" class="btn btn-secondary">Submit</button>
+            <button name="cancel" class="btn btn-secondary" onclick="location.href='/users/dashboard'">Cancel</button>
+             
+        </fieldset>
+    </form>
+<% } %>

@@ -127,12 +127,12 @@ exports.createUser = catchAsync(async function (req, res, next) {
             message,
         });
 
-        // req.flash("success_message", "Email sent to the User");
-
-        util.sendResponse(res, 200, {
-            status: 'sucess',
-            message: 'Email sent to employee!',
-        });
+        req.flash("success_message", "Email sent to the User");
+        res.redirect(`/users/dashboard/${req.params.admin}`);
+        // util.sendResponse(res, 200, {
+        //     status: 'sucess',
+        //     message: 'Email sent to employee!',
+        // });
 
     } catch (err) {
         console.log(err);

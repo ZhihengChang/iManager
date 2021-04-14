@@ -24,8 +24,10 @@
 <div class="tabBoxContainer">
     <div id="Week" class="calender">
         <h1 class="scheduleTitle">
-            Week <%= getWeekOfMonth() %> - <%= getDateOfISOWeek(userInfo.schedule[0].weekNumber, userInfo.schedule[0].year).toLocaleDateString('default',
-                {month: 'long' }) %> - <%= userInfo.schedule[0].year %>
+            <%if(userInfo.schedule.length != 0){%>
+                Week <%= getWeekOfMonth() %> - <%= getDateOfISOWeek(userInfo.schedule[0].weekNumber, userInfo.schedule[0].year).toLocaleDateString('default',
+                    {month: 'long' }) %> - <%= userInfo.schedule[0].year %>
+            <% } %>
         </h1>
         <div class="tabBar">
             <ul class="tablist">
@@ -43,8 +45,10 @@
 
     <div id="Month" class="calender">
         <h1 class="scheduleTitle">
-            <%= getDateOfISOWeek(userInfo.schedule[0].weekNumber, userInfo.schedule[0].year).toLocaleDateString('default',
-                {month: 'long' }) %> - <%= userInfo.schedule[0].year %>
+            <%if(userInfo.schedule.length != 0){%>
+                <%= getDateOfISOWeek(userInfo.schedule[0].weekNumber, userInfo.schedule[0].year).toLocaleDateString('default',
+                    {month: 'long' }) %> - <%= userInfo.schedule[0].year %>
+            <% } %>
         </h1>
         <div class="tabBar">
             <ul class="tablist scheduleMonthlyViewFix">

@@ -1,18 +1,21 @@
 <% const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'] %> 
 
-<% for(let i = 0; i < days.length; i++ ) { %>
-    <div id="<%= days[i] %>" class="tabcontent">
-        <div class="timeBlock">
-            <% let dayName = days[i] %>
-            <% let startTime = userInfo.schedule[0][dayName].startTime.hours %>
-            <% let endTime = userInfo.schedule[0][dayName].endTime.hours %>
-
-            <h1 class="important_text"><%= userInfo.firstName %> <%= userInfo.lastName %></h1>
-            <br/>
-            <h1><%= userInfo.position %></h1>
-            <br/>
-            <h1 class="important_text"><%= startTime %>am - <%= endTime - 12 %>pm</h1>
-            
+<%console.log(userInfo)%>
+<%if(userInfo.schedule.length != 0){%>
+    <% for(let i = 0; i < days.length; i++ ) { %>
+        <div id="<%= days[i] %>" class="tabcontent">
+            <div class="timeBlock">
+                <% let dayName = days[i] %>
+                <% let startTime = userInfo.schedule[0][dayName].startTime.hours %>
+                <% let endTime = userInfo.schedule[0][dayName].endTime.hours %>
+    
+                <h1 class="important_text"><%= userInfo.firstName %> <%= userInfo.lastName %></h1>
+                <br/>
+                <h1><%= userInfo.position %></h1>
+                <br/>
+                <h1 class="important_text"><%= startTime %>am - <%= endTime - 12 %>pm</h1>
+                
+            </div>
         </div>
-    </div>
+    <% } %>
 <% } %>
