@@ -72,7 +72,7 @@
 
 ![Product Name Screen Shot](https://github.com/ZhihengChang/iManager/blob/main/demo/screenshot/userHome.PNG)
 
-Replace here with Project description and novelty
+Our project is to provide a lite weight, user friendly (both employees and managers) online management platform for the workplace. This platform enables managers to manage the workplace remotely and simply. It would also free employees from coming into the workplace to know their work schedule, payroll information and general notices. Employees will be able to request changes remotely easier. 
 
 ### Built With
 
@@ -90,7 +90,13 @@ Before use iManager, make sure all preequisites are satisfied, and follow below 
 
 ### Prerequisites
 
-Replace here with Node Environment Setup,
+At first, make sure you alread installed the NodeJS into your device you used. 
+You can use the following command in terminal to check:
+```sh
+   npm -v
+   ```
+If not, you can download it by using following link.
+* [Node.js](https://nodejs.org/en/download/)
 
 #### Username - Password
 - Admin Account: adamc123 - 123
