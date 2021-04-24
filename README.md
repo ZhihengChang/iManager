@@ -31,9 +31,9 @@
     <br />
     <a href="#">View Demo</a>
     ·
-    <a href="https://github.com/ZhihengChang/iManager/issues">Report Bug</a>
+    <a href="https://github.com/ZhihengChang/iManager/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/ZhihengChang/iManager/issues">Request Feature</a>
+    <a href="https://github.com/ZhihengChang/iManager/issues/new">Request Feature</a>
   </p>
 </p>
 
@@ -86,16 +86,13 @@ Replace here with Project description and novelty
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Before use iManager, make sure all preequisites are satisfied, and follow below installation steps to install the platform.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm start
-  ```
+Replace here with Node Environment Setup,
+
+
 
 ### Installation
 
@@ -118,7 +115,7 @@ Clone the repo
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/ZhihengChang/iManager/issues) for a list of proposed features (and known issues).
 
 
 
