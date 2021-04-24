@@ -9,9 +9,8 @@
 [![Contributors][contributors-shield]](https://github.com/ZhihengChang/iManager/graphs/contributors)
 [![Forks][forks-shield]](https://github.com/ZhihengChang/iManager/network/members)
 [![Stargazers][stars-shield]](https://github.com/ZhihengChang/iManager/stargazers)
-<a href="https://img.shields.io/github/issues/ZhihengChang/iManager?style=for-the-badge">
-[![MIT License][license-shield]](https://github.com/ZhihengChang/iManager/blob/main/LICENSE)
-<a href="https://img.shields.io/github/license/ZhihengChang/iManager?style=for-the-badge">
+[![Issues][issues-shield]](https://img.shields.io/github/issues/ZhihengChang/iManager?style=for-the-badge)
+[![MIT License][license-shield]](https://img.shields.io/github/license/ZhihengChang/iManager?style=for-the-badge)
 
 
 
