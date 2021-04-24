@@ -6,11 +6,11 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]](https://github.com/ZhihengChang/iManager/graphs/contributors)
-[![Forks][forks-shield]](https://github.com/ZhihengChang/iManager/network/members)
-[![Stargazers][stars-shield]](https://github.com/ZhihengChang/iManager/stargazers)
+![Contributors](https://img.shields.io/github/contributors/ZhihengChang/iManager)
+![Forks](https://img.shields.io/github/forks/ZhihengChang/iManager?style=for-the-badge)
+![Stargazers](https://img.shields.io/github/stars/ZhihengChang/iManager?style=for-the-badge)
 ![Issues](https://img.shields.io/github/issues/ZhihengChang/iManager?style=for-the-badge)
-[![MIT License][license-shield]](https://img.shields.io/github/license/ZhihengChang/iManager?style=for-the-badge)
+![MIT License](https://img.shields.io/github/license/ZhihengChang/iManager?style=for-the-badge)
 
 
 
