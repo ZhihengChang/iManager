@@ -92,6 +92,9 @@ Before use iManager, make sure all preequisites are satisfied, and follow below 
 
 Replace here with Node Environment Setup,
 
+#### Username - Password
+- Admin Account: adamc123 - 123
+- User Account: glassr - 1234
 
 
 ### Installation
