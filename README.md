@@ -90,13 +90,12 @@ Before use iManager, make sure all preequisites are satisfied, and follow below 
 
 ### Prerequisites
 
-At first, make sure you alread installed the NodeJS into your device you used. 
-You can use the following command in terminal to check:
+First, make sure you already have Node.js installed. 
+To check use:
 ```sh
    npm -v
    ```
-If not, you can download it by using following link.
-* [Node.js](https://nodejs.org/en/download/)
+If no version found, download it [here](https://nodejs.org/en/download/)
 
 #### Username - Password
 - Admin Account: adamc123 - 123
