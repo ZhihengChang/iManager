@@ -29,7 +29,7 @@
     <a href="https://drive.google.com/drive/u/0/folders/1KQOHstTeHhpCUdb5cP_O17_pKgQ9rnH3"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://github.com/ZhihengChang/iManager/raw/main/demo/demo.mp4">View Demo</a>
     ·
     <a href="https://github.com/ZhihengChang/iManager/issues/new">Report Bug</a>
     ·
